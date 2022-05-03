@@ -1,0 +1,19 @@
+body {
+  background: $full-white;
+  @include inter($primary-text, 16px);
+}
+
+a {
+  @include interBold($primary-text, inherit);
+  text-decoration: none;
+}
+
+.container {
+  width: calc(100% - 40px);
+  max-width: 768px;
+  position: relative;
+  margin: 20px auto;
+  @media #{$tablet} {
+    margin: 60px auto 30px;
+  }
+}

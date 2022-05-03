@@ -1,0 +1,67 @@
+.hero {
+  @include interBlack($full-black, 50px);
+  margin: 0 0 20px;
+  @media #{$tablet}{
+    @include interBlack($full-black, 80px);
+    margin: 0 0 30px;
+  }
+}
+
+p {
+  margin: 0 0 20px;
+}
+
+.linksBox {
+  a {
+    display: inline-block;
+    margin: 0 15px 0 0;
+    path.link {
+      transition: all .5s ease;
+      fill: $links;
+      transform: rotate(0);
+      transform-origin: center;
+    }
+    &:hover {
+      path.link {
+        fill: $blue;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+footer {
+  p {
+    text-align: center;
+    position: relative;
+    position: absolute;
+    width: 50px;
+    margin: 0 auto;
+    display: inline-block;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -25px;
+    cursor: pointer;
+  }
+}
+
+.switchBox {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: auto;
+  span {
+    display: inline-block;
+    margin: 0 0 0 8px;
+    position: relative;
+    &.switch {
+      top: -2px;
+    }
+    &.dark {
+      top: -2px;
+    }
+    &.light {
+      top: 1px;
+    }
+  }
+}
