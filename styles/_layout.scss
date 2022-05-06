@@ -1,11 +1,17 @@
 body {
+  transition: all .5s ease;
   background: $full-white;
   @include inter($primary-text, 16px);
+  a {
+    @include interBold($primary-text, inherit);
+  }
 }
 
 a {
-  @include interBold($primary-text, inherit);
   text-decoration: none;
+  &:visited {
+    @include interBold(inherit, inherit);
+  }
 }
 
 .container {

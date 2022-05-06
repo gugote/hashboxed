@@ -4,6 +4,9 @@
     position: relative;
     z-index: 100;
     left: 10px;
+    .hash {
+      fill: $full-white;
+    }
   }
   @media #{$tablet}{
     margin: 0 0 30px;    
@@ -15,7 +18,7 @@
   top: 0;
   width: 120px;
   height: 120px;
-  background: $blue;
+  background: linear-gradient(50deg, hsl(303, 100%, 50%) 7%, #ff0000 87%);
   animation:blobs 15s ease-in-out infinite alternate;
 }
 

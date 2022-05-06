@@ -15,6 +15,10 @@ p {
   a {
     display: inline-block;
     margin: 0 15px 0 0;
+    path.lines {
+      transition: all .2s ease;
+      stroke: $links-logo;
+    }
     path.link {
       transition: all .5s ease;
       fill: $links;
@@ -23,8 +27,11 @@ p {
     }
     &:hover {
       path.link {
-        fill: $blue;
+        fill: $pink;
         transform: rotate(180deg);
+      }
+      path.lines {
+        stroke: $full-white;
       }
     }
   }
@@ -50,6 +57,7 @@ footer {
   top: 30px;
   right: 0;
   width: auto;
+  cursor: pointer;
   span {
     display: inline-block;
     margin: 0 0 0 8px;
@@ -62,6 +70,9 @@ footer {
     }
     &.light {
       top: 1px;
+    }
+    path {
+      transition: all .2s linear;
     }
   }
 }

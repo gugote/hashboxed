@@ -1,0 +1,37 @@
+// DARK THEME
+html[data-theme="dark"] {
+  body {
+    background: $full-black;
+    @include inter($full-white, 16px);
+    a {
+      @include interBold($full-white, inherit);
+    }
+    .hero {
+      @include interBlack($pink, 50px);
+      margin: 0 0 20px;
+      @media #{$tablet}{
+        @include interBlack($pink, 80px);
+        margin: 0 0 30px;
+      }
+    }
+    .switchBox {
+      .light,
+      .switch,
+      .dark {
+        path {
+          stroke: $full-white;
+        }
+      }
+      .switch {
+        path.knob {
+          transform: translate(7px);
+        }
+      }
+    }
+    footer {
+      path.tag {
+        fill: $full-white;
+      }
+    }
+  }
+}
