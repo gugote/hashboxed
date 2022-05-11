@@ -1,23 +1,14 @@
 import Script from "next/script";
+import Logo from "../components/logo";
+import SwitchBox from "../components/switchbox";
+import Footer from "../components/footer";
 
 export default function Home() {
   return (
     <div className='content'>
       <section className='container'>
-        <div className='logo'>
-          <svg xmlns="http://www.w3.org/2000/svg" width="106" height="116" viewBox="0 0 106 116">
-            <g fill="none" fillRule="evenodd" transform="translate(-8 -3)">
-              {/* <path fill="#A0D7FF" d="M71,5.77350269 L103.82755,24.7264973 L103.82755,24.7264973 C110.015571,28.2991532 113.82755,34.9016936 113.82755,42.0470054 L113.82755,79.9529946 L113.82755,79.9529946 C113.82755,87.0983064 110.015571,93.7008468 103.82755,97.2735027 L71,116.226497 L71,116.226497 C64.8119785,119.799153 57.1880215,119.799153 51,116.226497 L18.1724504,97.2735027 L18.1724504,97.2735027 C11.9844288,93.7008468 8.17245037,87.0983064 8.17245037,79.9529946 L8.17245037,42.0470054 L8.17245037,42.0470054 C8.17245037,34.9016936 11.9844288,28.2991532 18.1724504,24.7264973 L51,5.77350269 L51,5.77350269 C57.1880215,2.20084679 64.8119785,2.20084679 71,5.77350269 Z"/> */}
-              <path className="hash" fill="#FFF" d="M43.68,57.776 L45.264,48.92 L51.096,48.92 L52.536,41.72 L62.112,41.72 L60.672,48.92 L65.712,48.92 L67.152,41.72 L76.728,41.72 L75.288,48.92 L81.192,48.92 L79.608,57.776 L73.632,57.776 L72.408,64.112 L78.6,64.112 L77.016,72.968 L70.68,72.968 L69.312,80.168 L59.736,80.168 L61.104,72.968 L56.064,72.968 L54.696,80.168 L45.12,80.168 L46.488,72.968 L41.088,72.968 L42.672,64.112 L48.216,64.112 L49.44,57.776 L43.68,57.776 Z M59.016,57.776 L57.792,64.112 L62.832,64.112 L64.056,57.776 L59.016,57.776 Z"/>
-            </g>
-          </svg>
-          <div className="blob"></div>
-        </div>
-        <div className='switchBox'>
-          <span className='light'><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M12 1V3" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M12 21V23" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M4.21997 4.22L5.63997 5.64" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M18.36 18.36L19.78 19.78" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M1 12H3" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M21 12H23" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M4.21997 19.78L5.63997 18.36" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M18.36 5.64L19.78 4.22" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-          <span className='switch'><svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 1H8C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15H16C19.866 15 23 11.866 23 8C23 4.13401 19.866 1 16 1Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path className="knob" d="M8 11C9.65685 11 11 9.65685 11 8C11 6.34315 9.65685 5 8 5C6.34315 5 5 6.34315 5 8C5 9.65685 6.34315 11 8 11Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-          <span className='dark'><svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10.2658C17.8511 11.8768 17.2465 13.4122 16.2569 14.6921C15.2672 15.9721 13.9336 16.9437 12.4119 17.4934C10.8902 18.043 9.24341 18.1479 7.66427 17.7958C6.08513 17.4437 4.63893 16.6492 3.49489 15.5051C2.35084 14.3611 1.55628 12.9149 1.20417 11.3357C0.852061 9.75659 0.956966 8.10983 1.50661 6.58814C2.05626 5.06644 3.02791 3.73275 4.30788 2.74313C5.58784 1.75351 7.12318 1.14888 8.73423 1C7.79101 2.27607 7.33713 3.8483 7.45513 5.43073C7.57314 7.01317 8.2552 8.50069 9.37725 9.62275C10.4993 10.7448 11.9868 11.4269 13.5693 11.5449C15.1517 11.6629 16.7239 11.209 18 10.2658V10.2658Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-        </div>
+        <Logo></Logo>
+        <SwitchBox></SwitchBox>
         <h1 className='hero'>Hashboxed</h1>
         <p>Hashboxed is a small UI/UX company founded in 2008 by me, <a href="/me">Carlos Bruscoli</a>, with the main mission of creating Websites, Web apps and Mobile apps, and well.. anything that fits in a screen.</p>
         <p>Hashboxed is based in <a href="https://www.google.com.ar/maps/place/Formosa,+Formosa+Province/@-26.1721517,-58.2299893,13z/data=!3m1!4b1!4m5!3m4!1s0x945ca5e488cf4f05:0xbcaebe65a1bae72!8m2!3d-26.1857768!4d-58.1755669" target="_blank">Formosa</a>, a small but lovely city on the north of Argentina.</p>
@@ -29,12 +20,7 @@ export default function Home() {
           <a href="https://www.twitter.com/gugote/" target="_blank"  className='twitter'><svg width="47" height="53" viewBox="0 0 47 53" fill="none" xmlns="http://www.w3.org/2000/svg"><path className="link" fillRule="evenodd" clipRule="evenodd" d="M19.0516 2.10911L4.44844 10.6191C1.69574 12.2232 0 15.1878 0 18.396V35.416C0 38.6242 1.69574 41.5888 4.44844 43.1929L19.0516 51.7029C21.8043 53.307 25.1957 53.307 27.9484 51.7029L42.5516 43.1929C45.3043 41.5888 47 38.6242 47 35.416V18.396C47 15.1878 45.3043 12.2232 42.5516 10.6191L27.9484 2.10911C25.1957 0.504972 21.8043 0.504972 19.0516 2.10911Z" fill="#E5E5E5"/><path className="lines" d="M34 17.9161C33.0424 18.5915 31.9821 19.1082 30.86 19.4461C30.2577 18.7536 29.4573 18.2628 28.567 18.04C27.6767 17.8172 26.7395 17.8733 25.8821 18.2005C25.0247 18.5278 24.2884 19.1105 23.773 19.8698C23.2575 20.6291 22.9877 21.5284 23 22.4461V23.4461C21.2426 23.4916 19.5013 23.1019 17.931 22.3115C16.3607 21.5211 15.0103 20.3547 14 18.9161C14 18.9161 10 27.9161 19 31.9161C16.9405 33.314 14.4872 34.015 12 33.9161C21 38.9161 32 33.9161 32 22.4161C31.9991 22.1375 31.9723 21.8597 31.92 21.5861C32.9406 20.5796 33.6608 19.3088 34 17.9161Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></a>
         </div>
       </section>
-      <footer>
-        <p>
-          <a href="/loveyourcode"><span><svg viewBox="0 0 39 16" xmlns="http://www.w3.org/2000/svg"><path className="heart" d="M9.22 2.2c.677-.65 1.41-1.224 2.24-1.666.904-.48 1.865-.612 2.875-.482.784.1 1.524.313 2.185.76.943.637 1.494 1.532 1.74 2.63.41 1.83-.103 3.422-1.225 4.867-.615.79-1.35 1.46-2.068 2.15-1.745 1.68-3.494 3.36-5.24 5.04-.366.35-.694.34-1.058-.01L2.38 9.43C1.333 8.426.46 7.296.15 5.85c-.36-1.66-.104-3.218 1.1-4.51C1.894.646 2.728.297 3.645.11c1.642-.334 3.086.092 4.38 1.112.398.314.786.64 1.194.975" fill="#F00"/>
-         <path className="tag" d="M31.666 2.036c-.026.097-.06.224-.096.35L27.873 15.18c-.017.06-.034.12-.058.18-.08.193-.216.265-.416.215a14.532 14.532 0 0 1-.55-.15c-.28-.082-.36-.224-.28-.505a87945.586 87945.586 0 0 0 3.77-13.035c.11-.388.21-.445.6-.336.14.04.29.07.44.12.15.05.26.15.27.36m5.01 6.51a80.36 80.36 0 0 0-.8-.79l-3.13-3.13c-.3-.3-.3-.42 0-.71.1-.11.21-.22.32-.33.23-.22.38-.22.61-.01l.07.07 4.51 4.51c.32.32.31.43-.01.75l-4.53 4.52c-.3.3-.42.3-.71.01a12.11 12.11 0 0 1-.34-.34c-.22-.22-.22-.36 0-.58l3.47-3.48c.16-.16.32-.32.51-.5m-11.2 3.92a1057.31 1057.31 0 0 0-3.35-3.35l-.58-.58 1.14-1.14 2.76-2.76c.05-.05.1-.1.14-.15.13-.16.13-.31-.01-.47a9.43 9.43 0 0 0-.4-.4c-.29-.29-.41-.29-.69-.01L19.91 8.2c-.275.275-.272.41.01.694l4.556 4.553c.025.025.048.05.074.074.207.2.355.2.56.01.123-.11.24-.23.357-.35.292-.29.294-.4.006-.69" fill="#000"/></svg></span></a>
-        </p>
-      </footer>
+      <Footer className="fixed"></Footer>
       <Script src="../javascript/hashboxed.js" strategy="beforeInteractive"/>
     </div>
   )

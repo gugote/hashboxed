@@ -7,6 +7,15 @@
   }
 }
 
+h2 {
+  @include interBlack($full-black, 20px);
+  margin: 0 0 20px;
+  @media #{$tablet}{
+    @include interBlack($full-black, 24px);
+    margin: 0 0 30px;
+  }
+}
+
 p {
   margin: 0 0 20px;
 }
@@ -38,9 +47,16 @@ p {
 }
 
 footer {
+  text-align: center;
+  p {
+    display: inline-block;
+    width: 50px;
+  }
+}
+
+footer.fixed {
   p {
     text-align: center;
-    position: relative;
     position: absolute;
     width: 50px;
     margin: 0 auto;
@@ -48,7 +64,6 @@ footer {
     bottom: 30px;
     left: 50%;
     margin-left: -25px;
-    cursor: pointer;
   }
 }
 
