@@ -14,6 +14,14 @@ html[data-theme="dark"] {
         margin: 0 0 30px;
       }
     }
+    h2 {
+      @include interBlack($full-white, 20px);
+      margin: 0 0 20px;
+      @media #{$tablet}{
+        @include interBlack($full-white, 24px);
+        margin: 0 0 30px;
+      }
+    }
     .switchBox {
       .light,
       .switch,
