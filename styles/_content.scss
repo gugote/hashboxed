@@ -24,23 +24,24 @@ p {
   a {
     display: inline-block;
     margin: 0 15px 0 0;
+    svg {
+      filter: drop-shadow(0 0 6px #eaeaea);
+    }
     path.lines {
       transition: all .2s ease;
       stroke: $links-logo;
     }
     path.link {
       transition: all .5s ease;
-      fill: $links;
+      fill: $full-white;
       transform: rotate(0);
       transform-origin: center;
     }
     &:hover {
       path.link {
-        fill: $pink;
+        fill: $links;
         transform: rotate(180deg);
-      }
-      path.lines {
-        stroke: $full-white;
+        stroke: none;
       }
     }
   }

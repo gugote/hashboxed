@@ -36,6 +36,21 @@ html[data-theme="dark"] {
         }
       }
     }
+    .linksBox {
+      svg {
+        filter: none;
+        path.link {
+          fill: $darker-grey;
+          transition: all .5s ease;
+          transform: rotate(0);
+          transform-origin: center;
+          &:hover {
+            fill: $pink;
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
     footer {
       path.tag {
         fill: $full-white;
