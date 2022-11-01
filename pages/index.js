@@ -1,4 +1,3 @@
-import Script from "next/script";
 import Logo from "../components/logo";
 import SwitchBox from "../components/switchbox";
 import Footer from "../components/footer";
@@ -14,6 +13,9 @@ export default function Home() {
         <p>Hashboxed is a small UI/UX company founded in 2008 by me, <Link href="/me"><a>Carlos Bruscoli</a></Link>, with the main mission of creating Websites, Web apps and Mobile apps, and well.. anything that fits in a screen.</p>
         <p>Hashboxed is based in <Link href="https://www.google.com.ar/maps/place/Formosa,+Formosa+Province/@-26.1721517,-58.2299893,13z/data=!3m1!4b1!4m5!3m4!1s0x945ca5e488cf4f05:0xbcaebe65a1bae72!8m2!3d-26.1857768!4d-58.1755669" target="_blank" rel="noopener"><a>Formosa</a></Link>, a small but lovely city on the north of Argentina.</p>
         <p>Right now I’m working as a Design Engineer / Frontend Developer @ <Link href="https://ring.com" target="_blank" rel="noopener"><a>Ring</a></Link> and doing small personal projects.</p>
+        <section className="links">
+          <p><Link href="/daily-ui-challenge" rel="noopener"><a>‣ Daily UI Challenge</a></Link></p>
+        </section>
         <div className='linksBox'>
           <Link href="https://github.com/gugote" target="_blank" rel="noopener" ><a className='github'><svg width="47" height="53" viewBox="0 0 47 53" fill="none" xmlns="http://www.w3.org/2000/svg"><path className="link" fillRule="evenodd" clipRule="evenodd" d="M19.0516 2.10911L4.44844 10.6191C1.69574 12.2232 0 15.1878 0 18.396V35.416C0 38.6242 1.69574 41.5888 4.44844 43.1929L19.0516 51.7029C21.8043 53.307 25.1957 53.307 27.9484 51.7029L42.5516 43.1929C45.3043 41.5888 47 38.6242 47 35.416V18.396C47 15.1878 45.3043 12.2232 42.5516 10.6191L27.9484 2.10911C25.1957 0.504972 21.8043 0.504972 19.0516 2.10911Z" fill="#E5E5E5"/><path className="lines" d="M27 37.9328V34.0628C27.0375 33.586 26.9731 33.1066 26.811 32.6566C26.6489 32.2066 26.3929 31.7962 26.06 31.4528C29.2 31.1028 32.5 29.9128 32.5 24.4528C32.4997 23.0566 31.9627 21.714 31 20.7028C31.4559 19.4813 31.4236 18.1311 30.91 16.9328C30.91 16.9328 29.73 16.5828 27 18.4128C24.708 17.7916 22.292 17.7916 20 18.4128C17.27 16.5828 16.09 16.9328 16.09 16.9328C15.5764 18.1311 15.5441 19.4813 16 20.7028C15.0301 21.7215 14.4925 23.0763 14.5 24.4828C14.5 29.9028 17.8 31.0928 20.94 31.4828C20.611 31.8228 20.3573 32.2282 20.1953 32.6727C20.0334 33.1172 19.9668 33.5909 20 34.0628V37.9328M20 34.9328C15 36.4328 15 32.4328 13 31.9328L20 34.9328Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></a></Link>
           <Link href="https://dribbble.com/gugote" target="_blank" rel="noopener"><a className='dribble'><svg width="47" height="53" viewBox="0 0 47 53" fill="none" xmlns="http://www.w3.org/2000/svg"><path className="link" fillRule="evenodd" clipRule="evenodd" d="M19.0516 2.10911L4.44844 10.6191C1.69574 12.2232 0 15.1878 0 18.396V35.416C0 38.6242 1.69574 41.5888 4.44844 43.1929L19.0516 51.7029C21.8043 53.307 25.1957 53.307 27.9484 51.7029L42.5516 43.1929C45.3043 41.5888 47 38.6242 47 35.416V18.396C47 15.1878 45.3043 12.2232 42.5516 10.6191L27.9484 2.10911C25.1957 0.504972 21.8043 0.504972 19.0516 2.10911Z" fill="#E5E5E5"/><path className="lines" d="M23 36.906C28.5228 36.906 33 32.4289 33 26.906C33 21.3832 28.5228 16.906 23 16.906C17.4772 16.906 13 21.3832 13 26.906C13 32.4289 17.4772 36.906 23 36.906Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path className="lines" d="M32.75 27.746C29.25 26.816 26.12 26.926 23.81 27.746C21.23 28.666 18.8 30.606 16.37 34.066M19.56 17.656C23.93 23.686 25.58 27.076 27.59 35.376L19.56 17.656ZM30.13 19.996C26.41 24.346 21.19 25.656 13.25 25.846L30.13 19.996Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></a></Link>
@@ -22,7 +24,6 @@ export default function Home() {
         </div>
       </section>
       <Footer className="fixed"></Footer>
-      <Script src="../javascript/hashboxed.js" strategy="beforeInteractive"/>
     </div>
   )
 }

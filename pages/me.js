@@ -1,7 +1,6 @@
 import Logo from '../components/logo';
 import SwitchBox from '../components/switchbox';
 import Footer from '../components/footer';
-import Script from 'next/script';
 import Link from 'next/link';
 
 export default function Me() {
@@ -25,7 +24,6 @@ export default function Me() {
 
       </section>
         <Footer></Footer>
-        <Script src="../javascript/hashboxed.js" strategy="beforeInteractive"/>
     </div>
   )
 }
