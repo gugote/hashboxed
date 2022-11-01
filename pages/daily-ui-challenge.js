@@ -12,7 +12,7 @@ export default function dailyUiChallenge(){
         <h1 className='hero'>Hashboxed</h1>
         <h2>Daily UI Challenge</h2>
         <div className='cards-container cf'>
-          <Link href="/daily-ui-challenge/01">
+          <Link href="/daily-ui-challenge/01" legacyBehavior>
             <div className='card'>
               <div className='card-image'></div>
               <div className="card-copy">
@@ -25,5 +25,5 @@ export default function dailyUiChallenge(){
       </section>
       <Footer className="fixed"></Footer>
     </div>
-  )
+  );
 }
