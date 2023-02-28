@@ -1,6 +1,5 @@
 // pages/_document.js
 import { Html, Head, Main, NextScript } from 'next/document'
-import Script from "next/script";
 
 export default function Document() {
   return (
@@ -22,7 +21,7 @@ export default function Document() {
         <Main />
         <NextScript />
       </body>
-      <Script src="../javascript/hashboxed.js" strategy="beforeInteractive"/>
+      <script type="text/javascript" src="/javascript/hashboxed.js"></script>
     </Html>
   )
 }

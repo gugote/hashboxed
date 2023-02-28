@@ -15,11 +15,22 @@ html[data-theme="dark"] {
       }
     }
     h2 {
-      @include interBlack($full-white, 20px);
+      @include interBold($full-white, 20px);
       margin: 0 0 20px;
       @media #{$tablet}{
-        @include interBlack($full-white, 24px);
+        @include interBold($full-white, 24px);
         margin: 0 0 30px;
+      }
+    }
+    h3 {
+      @include interBold($full-white, 16px);
+      margin: 0 0 10px;
+      @media #{$tablet}{
+        @include interBold($full-white, 18px);
+        margin: 0 0 10px;
+      }
+      &.title {
+        margin: 50px 0 10px;
       }
     }
     .switchBox {

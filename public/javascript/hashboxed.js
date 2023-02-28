@@ -6,9 +6,11 @@ function changeTheme(){
     if (html.getAttribute('data-theme') == 'dark')  {
       html.setAttribute('data-theme', 'light');
       html.style.colorScheme = "light";
+      console.log('white');
     } else {
       html.setAttribute('data-theme', 'dark')
       html.style.colorScheme = "dark";
+      console.log('dark');
     }
   }
 }

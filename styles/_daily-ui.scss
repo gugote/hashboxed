@@ -1,0 +1,17 @@
+.content.daily-ui-challenge {
+  h3 {
+    @include inter($full-black, 16px);
+    margin: 0 0 10px;
+    @media #{$tablet}{
+      @include inter($full-black, 18px);
+      margin: 0 0 10px;
+    }
+    &.title {
+      margin: 50px 0 10px;
+    }
+  }
+
+  .cards-container {
+    margin: 50px 0;
+  }
+}

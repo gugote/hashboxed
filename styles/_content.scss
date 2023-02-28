@@ -8,11 +8,23 @@
 }
 
 h2 {
-  @include interBlack($full-black, 20px);
+  @include interBold($full-black, 20px);
   margin: 0 0 20px;
   @media #{$tablet}{
-    @include interBlack($full-black, 24px);
+    @include interBold($full-black, 24px);
     margin: 0 0 30px;
+  }
+}
+
+h3 {
+  @include interBold($full-black, 16px);
+  margin: 0 0 10px;
+  @media #{$tablet}{
+    @include interBold($full-black, 18px);
+    margin: 0 0 10px;
+  }
+  &.title {
+    margin: 50px 0 10px;
   }
 }
 
@@ -22,34 +34,6 @@ p {
 
 .links {
   margin: 40px 0;
-}
-
-.linksBox {
-  a {
-    display: inline-block;
-    margin: 0 15px 0 0;
-    svg {
-      filter: drop-shadow(0 0 6px #eaeaea);
-    }
-    path.lines {
-      transition: all .2s ease;
-      stroke: $links-logo;
-      transform: translate(1px, 0px);
-    }
-    path.link {
-      transition: all .5s ease;
-      fill: $full-white;
-      transform: rotate(0);
-      transform-origin: center;
-    }
-  }
-  a:hover {
-    path.link {
-      fill: $links;
-      transform: rotate(180deg);
-      stroke: none;
-    }
-  }
 }
 
 footer {
@@ -79,6 +63,7 @@ footer.fixed {
   right: 0;
   width: auto;
   cursor: pointer;
+  display: none;
   span {
     display: inline-block;
     margin: 0 0 0 8px;
@@ -94,6 +79,40 @@ footer.fixed {
     }
     path {
       transition: all .2s linear;
+    }
+  }
+}
+
+// CARDS
+.cards-container {
+  position: flex;
+  .card {
+    background: $links;
+    border-radius: 16px;
+    border: 1px solid rgba(210, 210, 210, 0.49);
+    width: 200px;
+    cursor: pointer;
+    .card-image {
+      width: 200px;
+      height: 200px;
+      img {
+        border-radius: 16px 16px 0 0;
+        width: 100%;
+      }
+    }
+    .card-copy {
+      padding: 10px 20px 0;
+      span {
+        @include interBold($full-black, 14px);
+        display: inline-block;
+        margin-bottom: 2px
+      }
+      h3 {
+        @include inter($full-black, 18px);
+      }
+    }
+    &:hover {
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.14);
     }
   }
 }
