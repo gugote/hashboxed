@@ -21,7 +21,7 @@ export default function Document() {
         <Main />
         <NextScript />
       </body>
-      <script type="text/javascript" src="/javascript/hashboxed.js"></script>
+      <script type="text/javascript" src="/javascript/hashboxed.js" async></script>
     </Html>
   )
 }
