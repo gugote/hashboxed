@@ -14,4 +14,16 @@
   .cards-container {
     margin: 50px 0;
   }
+  
+  .case-study-display {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 50px 0;
+    background-color: $links;
+    border-radius: 16px;
+    img {
+      border-radius: 16px;
+    }
+  }
 }

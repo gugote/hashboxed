@@ -14,7 +14,7 @@ export default function dailyUiChallenge(){
         <Logo></Logo>
         <SwitchBox></SwitchBox>
         <h1 className='hero'>Daily UI Challenge</h1>
-        <h2 classNam='title'>Daily UI Challenge is a design challenge to inspire and challenge designers around the world.</h2>
+        <h2 className='title'>Daily UI Challenge is a design challenge to inspire and challenge designers around the world.</h2>
         <h3>The challenge consist on getting a design prompt with an open theme and you should create something daily.</h3>
         <h4>
           <a href="https://www.dailyui.co/" rel="noopener noreferrer" target='_blank'>https://www.dailyui.co/</a>
