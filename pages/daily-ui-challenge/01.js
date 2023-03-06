@@ -1,7 +1,5 @@
 import Logo from "../../components/logo";
 import SwitchBox from "../../components/switchbox";
-import Footer from "../../components/footer";
-import Link from "next/link";
 
 // IMAGES
 import Image from "next/image";
