@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import thumb01 from "../public/images/daily-ui-challenge/01-sign-up-thumb.jpg";
 import thumb02 from "../public/images/daily-ui-challenge/02-credit-card-checkout-thumb.jpg";
+import thumb03 from "../public/images/daily-ui-challenge/03-landing-page-thumb.jpg";
 
 export default function dailyUiChallenge(){
   return (
@@ -50,6 +51,22 @@ export default function dailyUiChallenge(){
               <div className="card-copy">
                 <span>#02</span>
                 <h3>Credit Card Checkout</h3>
+              </div>
+            </div>
+          </Link>
+          <Link href="/daily-ui-challenge/03" legacyBehavior>
+            <div className='card'>
+              <div className='card-image'>
+                <Image 
+                  src={thumb03}
+                  alt="#03 - Landing Page"
+                  width={200}
+                  height={200}
+                />
+              </div>
+              <div className="card-copy">
+                <span>#03</span>
+                <h3>Landing Page</h3>
               </div>
             </div>
           </Link>
