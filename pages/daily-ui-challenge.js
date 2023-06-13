@@ -8,6 +8,7 @@ import Image from "next/image";
 import thumb01 from "../public/images/daily-ui-challenge/01-sign-up-thumb.jpg";
 import thumb02 from "../public/images/daily-ui-challenge/02-credit-card-checkout-thumb.jpg";
 import thumb03 from "../public/images/daily-ui-challenge/03-landing-page-thumb.jpg";
+import thumb04 from "../public/images/daily-ui-challenge/04-calculator-app-thumb.jpg";
 
 export default function dailyUiChallenge(){
   return (
@@ -17,7 +18,7 @@ export default function dailyUiChallenge(){
         <SwitchBox></SwitchBox>
         <h1 className='hero'>Daily UI Challenge</h1>
         <h2 className='title'>Daily UI Challenge is a design challenge to inspire and challenge designers around the world.</h2>
-        <h3>The challenge consist on getting a design prompt with an open theme and you should create something daily.</h3>
+        <h3>The challenge consist on getting a design prompt with an open theme and you should create something daily. I did it because it was fun to quickly put together some concepts and try new techniques on design.</h3>
         <h4>
           <a href="https://www.dailyui.co/" rel="noopener noreferrer" target='_blank'>https://www.dailyui.co/</a>
         </h4>
@@ -70,9 +71,25 @@ export default function dailyUiChallenge(){
               </div>
             </div>
           </Link>
+          <Link href="/daily-ui-challenge/04" legacyBehavior>
+            <div className='card'>
+              <div className='card-image'>
+                <Image 
+                  src={thumb04}
+                  alt="#04 - Calculator App"
+                  width={200}
+                  height={200}
+                />
+              </div>
+              <div className="card-copy">
+                <span>#04</span>
+                <h3>Calculator App</h3>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
-      <Footer className="fixed"></Footer>
+      <Footer></Footer>
     </div>
   );
 }

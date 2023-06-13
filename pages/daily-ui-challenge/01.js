@@ -1,5 +1,6 @@
 import Logo from "../../components/logo";
 import SwitchBox from "../../components/switchbox";
+import Footer from "../../components/footer";
 
 // IMAGES
 import Image from "next/image";
@@ -23,6 +24,7 @@ export default function DUI01(){
           />
         </div>
       </section>
+      <Footer></Footer>
     </div>
   )
 }
