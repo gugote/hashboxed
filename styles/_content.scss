@@ -1,39 +1,84 @@
 .hero {
-  @include interBlack($full-black, 50px);
+  @include interBlack($primary-text, 50px);
   margin: 0 0 20px;
   @media #{$tablet}{
-    @include interBlack($full-black, 80px);
+    @include interBlack($primary-text, 80px);
     margin: 0 0 30px;
   }
 }
 
 h2 {
-  @include interBold($full-black, 20px);
+  @include interBold($primary-text, 20px);
   margin: 0 0 20px;
   @media #{$tablet}{
-    @include interBold($full-black, 24px);
-    margin: 0 0 30px;
+    @include interBold($primary-text, 24px);
+    margin: 0 0 20px;
   }
 }
 
 h3 {
-  @include interBold($full-black, 16px);
+  @include interBold($primary-text, 16px);
   margin: 0 0 10px;
   @media #{$tablet}{
-    @include interBold($full-black, 18px);
+    @include interBold($primary-text, 18px);
     margin: 0 0 10px;
   }
   &.title {
-    margin: 50px 0 10px;
+    margin: 0;
+  }
+}
+
+small {
+  @include interBold($primary-text, 12px);
+  margin: 0 0 10px;
+  @media #{$tablet}{
+    @include inter($medium-dark-grey, 14px);
+    margin: 0 0 10px;
+    display: block;
   }
 }
 
 p {
-  margin: 0 0 20px;
+  margin: 0 0 40px;
+}
+
+.skills-used {
+  margin: 10px 0 10px 20px;
+  li {
+    margin: 0 0 10px;
+    list-style-type: circle;
+  }
 }
 
 .links {
   margin: 40px 0;
+}
+
+.nav {
+  position: sticky;
+  position: -webkit-sticky;
+  left: 0;
+  margin-left: -170px;
+  top: 130px;
+  display: inline-block;
+  text-align: right;
+  padding: 0 20px 0 0;
+  border-right: 2px solid $grey-borders;
+  a {
+    @include interBold($medium-dark-grey, 12px);
+    text-transform: uppercase;
+    display: block;
+    margin: 5px 0;
+    &.active {
+      @include interBold($blue, 12px);
+      &:hover {
+        @include interBold($blue, 12px);
+      }
+    }
+    &:hover {
+      @include interBold($full-black, 12px);
+    }
+  }
 }
 
 footer {
@@ -107,16 +152,95 @@ footer.fixed {
     .card-copy {
       padding: 10px 20px 0;
       span {
-        @include interBold($full-black, 14px);
+        @include interBold($primary-text, 14px);
         display: inline-block;
         margin-bottom: 2px
       }
       h3 {
-        @include inter($full-black, 18px);
+        @include inter($primary-text, 18px);
       }
     }
     &:hover {
       box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.14);
     }
+  }
+}
+
+// CASE STUDIES
+.case-study {
+  margin: 50px 0 60px;
+  padding: 0 0 0 20px;
+  border-left: 4px solid $grey-borders;
+  cursor: pointer;
+  &.no-link {
+    cursor: initial;
+  }
+  &:hover {
+    border-left: 4px solid $blue;
+  }
+  h4 {
+    margin-bottom: 20px;
+    font-weight: normal;
+  }
+  .case-box {
+    width: 220px; 
+    float: left;
+    border: 1px solid $grey-borders;
+    box-shadow: 0 0 2px $shadow;
+    margin: 20px 26px 20px 0;
+    &:last-child {
+      margin: 0;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .case-box-big-with-link {
+    width: 660px; 
+    float: none;
+    border: 1px solid $grey-borders;
+    box-shadow: 0 0 2px $shadow;
+    margin: 40px 26px 20px 0;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    span, small {
+      display: none;
+    }
+    &:hover {
+      span {
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background: $full-black;
+        opacity: 0.333;
+      }
+      small {
+        display: block;
+        text-align: center;
+        margin-top: 0;
+        position: absolute;
+        top: 43%;
+        text-transform: uppercase;
+        padding: 10px 0;
+        background: grey;
+        left: 50%;
+        margin-left: -150px;
+        width: 300px;
+        @include interBold($full-white, 16px);
+      }
+    }
+  }
+  small {
+    margin: 10px 0;
+    display: block;
+    @include inter($negative, 11px);
   }
 }

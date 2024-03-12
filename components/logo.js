@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-export default function Logo(){
+export default function Logo(props){
   return (
-    <div className='logo'>
+    <div className={`logo ${props.hasButton}`}>
       <Link href="/" legacyBehavior>
         <div className="logolink">
           <svg xmlns="http://www.w3.org/2000/svg" width="106" height="116" viewBox="0 0 106 116">
