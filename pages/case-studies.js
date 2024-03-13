@@ -9,6 +9,7 @@ import plc03 from "../public/images/case-studies/ring/plc-app-03.png";
 import sessions from "../public/images/case-studies/sessions/sessions.png";
 import arcosule from "../public/images/case-studies/arcosule/arcosule.png";
 import dondedonar from "../public/images/case-studies/dondedonar/dondedonar.png";
+import prode from "../public/images/case-studies/prode/prode.png";
 
 export default function CaseStudies() {
   return (
@@ -71,6 +72,29 @@ export default function CaseStudies() {
               <Image 
                 src={sessions}
                 alt="Sessions App"
+                width={660}
+                height={300}
+              />
+              <span></span>
+              <small>View Full Figma Project</small>
+            </Link>
+          </div>
+        </div>
+        <div className="case-study no-link">
+          <h2>Hashboxed</h2>
+          <h3 className="title">PRODE LANDING - COPA AMERICA - 2024 - NEW</h3>
+          <h4>In anticipation of the Copa America 2024 in the US, we are crafting a dynamic web app designed specifically for companies to engage their internal teams through an exhilarating football fantasy game.</h4> 
+          <p>This platform combines sleek, sports-themed aesthetics with an easy-to-navigate interface, allowing employees to guess the matches results and goal scorers, compete in leagues, and track their progress throughout the tournament. It&apos;s not just about football; it&apos;s a way to foster team spirit and camaraderie within the workplace.</p>
+          <ul className="skills-used">
+            <li>Product Design</li>
+            <li>Product Management</li>
+            <li>UX/UI Design of the dashboard</li>
+          </ul>
+          <div className="case-box-big-with-link">
+            <Link href="https://www.figma.com/file/YcUPDMoNFjouIzjTdi0VJI/Untitled?type=design&node-id=0%3A1&mode=design&t=e12G64thWmn5C0ii-1" target="_blank" rel="noopener">
+              <Image 
+                src={prode}
+                alt="prode"
                 width={660}
                 height={300}
               />
