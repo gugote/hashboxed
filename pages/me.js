@@ -6,11 +6,11 @@ export default function Me() {
   return (
     <div className="content">
       <section className="container">
+        <Logo></Logo>
         <div className="nav">
           <Link href="/me" className='active'>Read about me</Link>  
           <Link href="/case-studies">Case Studies</Link>  
         </div>
-        <Logo hasButton='has-button'></Logo>
         <h1 className='hero hero-button'>About Me</h1>
         <h2>Introduction</h2>
         <p>Ever since I kicked off my professional journey, I&apos;ve dived into a whole bunch of cool projects. I&apos;m talking websites, intricate web apps, mobile apps (both the native kind and those optimized for iOS and Android), e-commerce platforms, digital newspapers, even the .nic registry in Argentina, and some wild fingerprint UI projects for Windows. A lot of this stuff is under wraps due to a bunch of NDAs.</p>

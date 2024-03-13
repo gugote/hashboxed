@@ -17,11 +17,4 @@ function changeTheme(){
   }
 }
 
-function logoLink(){
-  document.querySelector('.logo').addEventListener('click', function(){
-    window.location.href = '/';
-  })
-}
-
 changeTheme();
-logoLink();

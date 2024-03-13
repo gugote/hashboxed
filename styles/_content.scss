@@ -65,8 +65,8 @@ p {
     position: sticky;
     position: -webkit-sticky;
     left: 0;
-    margin-left: -170px;
-    top: 130px;
+    margin-left: -290px;
+    top: 230px;
     display: inline-block;
     text-align: right;
     padding: 0 20px 0 0;
@@ -90,6 +90,7 @@ p {
 }
 
 footer {
+  display: none;
   text-align: center;
   p {
     display: inline-block;
@@ -116,7 +117,7 @@ footer.fixed {
   right: 0;
   width: auto;
   cursor: pointer;
-  // display: none;
+  display: none;
   span {
     display: inline-block;
     margin: 0 0 0 8px;

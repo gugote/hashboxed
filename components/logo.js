@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function Logo(props){
   return (
-    <div className={`logo ${props.hasButton}`}>
-      <Link href="/" legacyBehavior>
-        <div className="logolink">
+    <div className="logo">
+      <Link href="/">
+        <span>
           <svg xmlns="http://www.w3.org/2000/svg" width="106" height="116" viewBox="0 0 106 116">
             <g fill="none" fillRule="evenodd" transform="translate(-8 -3)">
               {/* <path fill="#A0D7FF" d="M71,5.77350269 L103.82755,24.7264973 L103.82755,24.7264973 C110.015571,28.2991532 113.82755,34.9016936 113.82755,42.0470054 L113.82755,79.9529946 L113.82755,79.9529946 C113.82755,87.0983064 110.015571,93.7008468 103.82755,97.2735027 L71,116.226497 L71,116.226497 C64.8119785,119.799153 57.1880215,119.799153 51,116.226497 L18.1724504,97.2735027 L18.1724504,97.2735027 C11.9844288,93.7008468 8.17245037,87.0983064 8.17245037,79.9529946 L8.17245037,42.0470054 L8.17245037,42.0470054 C8.17245037,34.9016936 11.9844288,28.2991532 18.1724504,24.7264973 L51,5.77350269 L51,5.77350269 C57.1880215,2.20084679 64.8119785,2.20084679 71,5.77350269 Z"/> */}
@@ -12,7 +12,7 @@ export default function Logo(props){
             </g>
           </svg>
           <div className="blob"></div>
-        </div>
+        </span>
       </Link>
     </div>
   );

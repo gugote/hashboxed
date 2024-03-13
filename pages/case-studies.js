@@ -14,11 +14,11 @@ export default function CaseStudies() {
   return (
     <div className="content">
       <section className="container">
+        <Logo></Logo>
         <div className="nav">
           <Link href="/me">Read about me</Link>  
           <Link href="/case-studies" className='active'>Case Studies</Link>  
         </div>
-        <Logo hasButton='has-button'></Logo>
         <h1 className='hero hero-button'>Case Studies</h1>
         <div className="case-study no-link">
           <h2>Ring.com</h2>
