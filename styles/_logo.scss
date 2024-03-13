@@ -39,6 +39,8 @@
 
 .has-button {
   .blob {
-    top: 30px;
+    @media #{$desktop}{
+      top: 30px;
+    }
   }
 }

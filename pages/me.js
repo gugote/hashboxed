@@ -1,5 +1,4 @@
 import Logo from '../components/logo';
-import SwitchBox from '../components/switchbox';
 import Footer from '../components/footer';
 import Link from 'next/link';
 
@@ -12,7 +11,6 @@ export default function Me() {
           <Link href="/case-studies">Case Studies</Link>  
         </div>
         <Logo hasButton='has-button'></Logo>
-        <SwitchBox></SwitchBox>
         <h1 className='hero hero-button'>About Me</h1>
         <h2>Introduction</h2>
         <p>Ever since I kicked off my professional journey, I&apos;ve dived into a whole bunch of cool projects. I&apos;m talking websites, intricate web apps, mobile apps (both the native kind and those optimized for iOS and Android), e-commerce platforms, digital newspapers, even the .nic registry in Argentina, and some wild fingerprint UI projects for Windows. A lot of this stuff is under wraps due to a bunch of NDAs.</p>
@@ -25,7 +23,7 @@ export default function Me() {
         <p>Established Hashboxed, providing UI/UX design and frontend development services to startups globally, where I directed projects across E-commerce, digital newspapers, and unique UI solutions for Windows. CMS&apos;s, SPA, Landing Pages, Blogs, Full Fledge websites, you name it we probably did it.</p>
         <h3 className='title'>Ring.com</h3>
         <small>2014 - Today</small>
-        <p>In 2014 I joined <Link href="http://ring.com/" target="_blank" rel="noopener">Ring.com</Link> (employee number 10), an IoT company which was acquired by Amazon in 2018. I was hired initially as a UI/UX designer and worked on the first design of the mobile app, first version of the website, creation of a styleguide, ecommerce and billing/user accounts for more than 4 years. My role evolved and today I am a Frontend Developer / Design Engineer for the Internal Admin portion of the site, working alongside the Design Team to help them reach the design interaction they want without forcing or compromising the code by doing crazy stuff to achieve those objectives and focusing on UX and UI improvements.</p>
+        <p>In 2014, I became the tenth employee at <Link href="http://ring.com/" target="_blank" rel="noopener">Ring.com</Link>, an IoT company later acquired by Amazon in 2018. Initially brought on board as a UI/UX designer, my responsibilities included designing of new features on the mobile app, developing the website&apos;s first iteration, establishing a comprehensive style guide, and enhancing e-commerce and billing/user accounts for over six years. My role has since evolved; I now serve as a Frontend Developer / Design Engineer for the Internal Admin section of the site. In collaboration with the Design Team, I am committed to achieving optimal design interaction without compromising the integrity of the code, all while concentrating on UX and UI enhancements. Notably, my most recent project contributed to over $4 million in savings for the company, underscoring the impactful and strategic nature of my work.</p>
         <h2>Personal Info</h2>
         <p>I live in Formosa, a small town in the nort of Argentina, father to three incredible kids and the proud owner of Zelda, the grumpiest puppy you&apos;ll ever meet, and Whisky, our cat who&apos;s convinced she&apos;s the real boss of the house.</p>
         <p>About my language, I can speak/write fluent English and Spanish.</p>

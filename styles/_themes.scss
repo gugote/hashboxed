@@ -3,34 +3,39 @@ html[data-theme="dark"] {
   body {
     background: $full-black;
     @include inter($full-white, 16px);
-    a {
-      @include interBold($full-white, inherit);
-    }
+    // a {
+    //   @include interBold($full-white, 16px);
+    // }
     .hero {
       @include interBlack($pink, 50px);
-      margin: 0 0 20px;
+      // margin: 0 0 20px;
       @media #{$tablet}{
         @include interBlack($pink, 80px);
-        margin: 0 0 30px;
+        // margin: 0 0 30px;
       }
     }
     h2 {
       @include interBold($full-white, 20px);
-      margin: 0 0 20px;
+      // margin: 0 0 20px;
       @media #{$tablet}{
         @include interBold($full-white, 24px);
-        margin: 0 0 30px;
+        // margin: 0 0 20px;
       }
     }
     h3 {
       @include interBold($full-white, 16px);
-      margin: 0 0 10px;
+      // margin: 0 0 10px;
       @media #{$tablet}{
         @include interBold($full-white, 18px);
-        margin: 0 0 10px;
+        // margin: 0 0 10px;
       }
       &.title {
-        margin: 50px 0 10px;
+        // margin: 50px 0 10px;
+      }
+    }
+    p {
+      a {
+        color: $blue!important;
       }
     }
     .switchBox {

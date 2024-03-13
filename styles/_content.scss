@@ -29,17 +29,19 @@ h3 {
 }
 
 small {
-  @include interBold($primary-text, 12px);
-  margin: 0 0 10px;
+  @include interBold($medium-dark-grey, 12px);
+  margin: 5px 0 10px;
+  display: block;
   @media #{$tablet}{
     @include inter($medium-dark-grey, 14px);
-    margin: 0 0 10px;
-    display: block;
   }
 }
 
 p {
   margin: 0 0 40px;
+  a {
+    color: $darker-grey!important;
+  }
 }
 
 .skills-used {
@@ -55,15 +57,21 @@ p {
 }
 
 .nav {
-  position: sticky;
-  position: -webkit-sticky;
-  left: 0;
-  margin-left: -170px;
-  top: 130px;
-  display: inline-block;
+  position: absolute;
+  top: 60px;
   text-align: right;
-  padding: 0 20px 0 0;
-  border-right: 2px solid $grey-borders;
+  right: 0;
+  @media #{$desktop}{
+    position: sticky;
+    position: -webkit-sticky;
+    left: 0;
+    margin-left: -170px;
+    top: 130px;
+    display: inline-block;
+    text-align: right;
+    padding: 0 20px 0 0;
+    border-right: 2px solid $grey-borders;
+  }
   a {
     @include interBold($medium-dark-grey, 12px);
     text-transform: uppercase;
@@ -104,11 +112,11 @@ footer.fixed {
 
 .switchBox {
   position: absolute;
-  top: 30px;
+  top: 0;
   right: 0;
   width: auto;
   cursor: pointer;
-  display: none;
+  // display: none;
   span {
     display: inline-block;
     margin: 0 0 0 8px;
@@ -184,20 +192,23 @@ footer.fixed {
   }
   .case-box {
     width: 220px; 
-    float: left;
     border: 1px solid $grey-borders;
     box-shadow: 0 0 2px $shadow;
     margin: 20px 26px 20px 0;
+    @media #{$tablet}{
+      float: left;
+    }
     &:last-child {
       margin: 0;
     }
     img {
       width: 100%;
       height: 100%;
+      display: block;
     }
   }
   .case-box-big-with-link {
-    width: 660px; 
+    width: 100%; 
     float: none;
     border: 1px solid $grey-borders;
     box-shadow: 0 0 2px $shadow;
@@ -208,10 +219,24 @@ footer.fixed {
       height: 100%;
       display: block;
     }
-    span, small {
+    span {
       display: none;
     }
-    &:hover {
+    small {
+      display: block;
+      text-align: center;
+      margin-top: 0;
+      position: absolute;
+      top: 35%;
+      text-transform: uppercase;
+      padding: 10px 0;
+      background: grey;
+      left: 50%;
+      margin-left: -120px;
+      width: 240px;
+      @include interBold($full-white, 14px);
+    }
+    @media #{$tablet}{
       span {
         display: block;
         position: absolute;
@@ -235,6 +260,37 @@ footer.fixed {
         margin-left: -150px;
         width: 300px;
         @include interBold($full-white, 16px);
+      }
+    }
+    @media #{$desktop}{
+      span, small {
+        display: none;
+      }
+      &:hover {
+        span {
+          display: block;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          background: $full-black;
+          opacity: 0.333;
+        }
+        small {
+          display: block;
+          text-align: center;
+          margin-top: 0;
+          position: absolute;
+          top: 43%;
+          text-transform: uppercase;
+          padding: 10px 0;
+          background: grey;
+          left: 50%;
+          margin-left: -150px;
+          width: 300px;
+          @include interBold($full-white, 16px);
+        }
       }
     }
   }
