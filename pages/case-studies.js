@@ -54,7 +54,7 @@ export default function CaseStudies() {
               height={145}
             />
           </div>
-          <small>* Can&apos;t show detailed samples since it&apos;s an internal tool protected by NDA but happy to discuss technical details and other projects @ Ring over a call.</small>
+          <small>* Can&apos;t show detailed samples since it&apos;s an internal tool protected by NDA However, I&apos;d be pleased to discuss the technical details of this one and other projects I&apos;ve undertaken @ Ring during the 2014-2024 period over a call.</small>
         </div>
         <div className="case-study no-link">
           <h2>Hashboxed</h2>
