@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,7 +9,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        "copy": "#3e3e3e",
+        "dark-copy": "#707070",
+        "dark-cards": "#0a0a0a",
+        "dark-cards-border": "#1c1c1c",
+      },
       backgroundImage: {
+        "park": "url('/footer.png')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",

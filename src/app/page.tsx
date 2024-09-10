@@ -1,113 +1,77 @@
+"use client";
+// React / Frameworks
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion"
+// Components
+import Header from "./components/Header";
+import Navigation from "./components/Navigation";
+import LatestUpdate from "./components/LatestUpdate";
+import ContentsIndex from "./components/ContentsIndex";
+import Footer from "./components/Footer";
+import ToggleTheme from "./components/ToggleTheme";
+// Assets
+import FormosaIcon from "../../public/formosa.svg"
+import Argentina from "../../public/argentina.gif"
 
 export default function Home() {
+  const [argentina, setArgentina] = useState(false);
+  const [isSpinning, setIsSpinning] = useState(false);
+  
+  const handleSpin = () => {
+    setIsSpinning(true);
+    setTimeout(() => setIsSpinning(false), 2000);
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
+    <div className="app-container pt-5">
+      <Header isSpinning={isSpinning}/>
+      <Navigation className={'absolute top-7 right-7 w-6 h-6'} />
+      <ToggleTheme className={'absolute top-[22px] right-14'}/>
+      <div className="content mx-5">
+        <p className="mb-5"><strong onClick={handleSpin} className="cursor-pointer dark:text-white">Hashboxed</strong> is a small UI/UX shop founded in 2008 by me, <span className="text-red-600 font-bold">Carlos Bruscoli</span>. At <strong onClick={handleSpin} className="cursor-pointer dark:text-white">Hashboxed</strong> we love to build all sorts of things: websites, web apps, mobile apps—you name it. If it shows up on a screen, we’re on it.</p>
+        <p className="mb-5 flex flex-row items-center">
+          <span className="w-16 mr-3">
+            <Link 
+              href="https://www.google.com.ar/maps/place/Formosa,+Formosa+Province/@-26.1721517,-58.2299893,13z/data=!3m1!4b1!4m5!3m4!1s0x945ca5e488cf4f05:0xbcaebe65a1bae72!8m2!3d-26.1857768!4d-58.1755669"
+              target="_blank"
+              rel="noopener">
+              <Image
+                alt="Formosa - Argentina"
+                src={FormosaIcon}
+                height={0}
+                width={0}
+                className="w-full shadow-sm"
+              />
+            </Link>
+          </span>
+          <span>We are based in <Link 
+              href="https://www.google.com.ar/maps/place/Formosa,+Formosa+Province/@-26.1721517,-58.2299893,13z/data=!3m1!4b1!4m5!3m4!1s0x945ca5e488cf4f05:0xbcaebe65a1bae72!8m2!3d-26.1857768!4d-58.1755669"
+              target="_blank"
+              rel="noopener"
+              className="font-bold text-orange-500">Formosa</Link>, a small but lovely city in the north of <strong onClick={() => setArgentina(!argentina)}>Argentina</strong>.</span>
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+        <p className="mb-5">Right now, I’m working as a Designer/Frontend Developer at <Link href="https://www.ring.com/" target="_blank" rel="noopener" className="text-sky-500 font-bold">Ring</Link> while also getting my hands dirty with some personal projects on the side.</p>
+        <LatestUpdate />
+        <ContentsIndex />        
+        <Footer />        
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+      {argentina && (
+        <motion.div
+          animate={{ translateY: [100, 50, 0, 20]}}
+          transition={{ ease: "easeOut", duration: 0.5 }}
         >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <Image
+            src={Argentina}
+            alt="Campeones del Mundo!"
+            height={100}
+            width={100}
+            className="absolute -bottom-20 right-5 drop-shadow-sm rounded-md border"
+          />
+        </motion.div>
+        ) 
+      }
+    </div>
   );
 }
