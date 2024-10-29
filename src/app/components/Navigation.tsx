@@ -1,3 +1,4 @@
+"use client";
 // React / Frameworks
 import { useState } from "react";
 import Link from "next/link";
@@ -8,10 +9,10 @@ import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import { NavigationData } from "../../../data/navigationData";
 
 interface NavigationProps {
-  className?: string
+  layoutClass?: string
 }
 
-export default function Navigation({ className }: NavigationProps) {
+export default function Navigation({ layoutClass }: NavigationProps) {
   
   const [menu, setMenu] = useState(false);
   
@@ -21,21 +22,21 @@ export default function Navigation({ className }: NavigationProps) {
 
 
   return(
-    <nav className={`${className} z-10`}>
-      <div className="z-10 relative">
+    <nav className={`${layoutClass} z-10`}>
+      <div className="z-10 relative p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">
         {menu ? (
-          <XMarkIcon className="w-6 h-6" onClick={handleMenu} />
+          <XMarkIcon className="w-5 h-5 cursor-pointer" onClick={handleMenu} />
         ) : (
-          <Bars3Icon className="w-6 h-6 dark:text-white" onClick={handleMenu} />
+          <Bars3Icon className="w-5 h-5 cursor-pointer dark:text-white" onClick={handleMenu} />
         )}
       </div>
       {menu && (
-        <div className="border shadow-lg pl-5 pr-5 py-5 absolute top-[-10px] right-[-10px] bg-white rounded-md w-[200px]">
+        <div className="border shadow-lg pl-5 pr-5 py-5 absolute top-[-10px] right-[-10px] bg-white rounded-md w-[250px]">
           { NavigationData.map((item) => 
             item.active ? (
-              <Link key={item.label} href={item.href} rel="noopener" className="block uppercase font-semibold text-sm mb-3 last:mb-0">
-                {item.icon}
-                {item.label}
+              <Link key={item.label} href={item.href} rel="noopener" className="uppercase font-semibold text-sm mb-3 last:mb-0 flex flex-row py-2 px-2 hover:bg-zinc-100 items-center w-[85%] rounded-lg">
+                <span className="w-6 mr-2">{item.icon}</span>
+                <span>{item.label}</span>
               </Link>
             ) : null
           )}

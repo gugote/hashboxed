@@ -1,5 +1,6 @@
-import { HomeModernIcon } from "@heroicons/react/24/outline"
 import { ReactElement } from "react"
+import { HomeModernIcon } from "@heroicons/react/24/outline"
+import { BriefcaseIcon } from "@heroicons/react/24/outline"
 
 export interface NavigationDataTypes {
   label: string,
@@ -15,21 +16,14 @@ export const NavigationData: NavigationDataTypes[] = [
     href: "/",
     active: true,
     icon: <HomeModernIcon className="w-full" />,
-    description: "",
-  },
-  {
-    label: "About",
-    href: "/about",
-    active: false,
-    // icon: "",
-    description: "",
+    description: "Everything else",
   },
   {
     label: "Works",
     href: "/works",
-    active: false,
-    // icon: "",
-    description: "",
+    active: true,
+    icon: <BriefcaseIcon className="w-full" />,
+    description: "View Hashboxed latest works",
   },
   {
     label: "Design Crit",
