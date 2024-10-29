@@ -50,8 +50,8 @@ export default function ProjectCards({ layoutClass }: ProjectCardsProps) {
     <div className={layoutClass}>
       {ProjectsData.map((project: ProjectsDataTypes) => (
         project.active && (
-          <div key={project.title} className="project-card flex flex-row justify-between bg-white p-7 rounded-xl shadow-2xl mb-20 gap-8">
-            <div className="w-1/3 sticky top-5 self-start mb-8">
+          <div key={project.title} className="project-card flex flex-col lg:flex-row justify-between bg-white p-7 rounded-xl shadow-2xl mb-20 gap-8">
+            <div className="w-full lg:w-1/3 lg:sticky top-5 self-start mb-2 lg:mb-8">
               <h2 className="text-4xl font-extrabold tracking-tighter mb-1">
                 {project.title}
               </h2>
@@ -64,7 +64,7 @@ export default function ProjectCards({ layoutClass }: ProjectCardsProps) {
                 {project.href}
               </Link>
               )}
-            <p className="mb-2" dangerouslySetInnerHTML={{ __html: project.description }}></p>
+            <p className="mb-1 lg:mb-2" dangerouslySetInnerHTML={{ __html: project.description }}></p>
               <div className="w-full my-6">
                 {project.tech?.map((tech, index) => (
                   <span key={index} className="bg-zinc-100 text-zinc-400 py-2 px-4 inline-block mr-5 mb-5 w-auto text-xs rounded-full">{tech}</span>
@@ -78,7 +78,7 @@ export default function ProjectCards({ layoutClass }: ProjectCardsProps) {
                 </Link>
               )}
             </div>
-            <div className="images-container w-2/3">
+            <div className="images-container w-full lg:w-2/3">
               {project.images && 
                 project.images.map((image, index) => (
                   <div key={index} className="project-image-item border border-zinc-200 rounded mb-5 relative group">
