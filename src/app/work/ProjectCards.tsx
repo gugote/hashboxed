@@ -84,18 +84,18 @@ export default function ProjectCards({ layoutClass }: ProjectCardsProps) {
                   <div key={index} className="project-image-item border border-zinc-200 rounded mb-5 relative group">
                     {image.bigUrl && (
                       <span className="icon-resize absolute right-2 top-2 p-1 bg-black bg-opacity-30 rounded text-white group-hover:bg-opacity-45 transition-all duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-5 group-hover:size-6 transition-all duration-300">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607ZM10.5 7.5v6m3-3h-6" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-5 group-hover:size-6 transition-all duration-300">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607ZM10.5 7.5v6m3-3h-6" />
                         </svg>
                       </span>
                     )}
                     <Image 
                       alt={project.title}
                       src={`/works/${image.url}`}
-                      layout='responsive'
-                      width={1}
-                      height={1}
-                      className={`rounded ${!image.bigUrl ? '' : 'cursor-pointer'}`}
+                      width="0"
+                      height="0"
+                      sizes="100vw"
+                      className={`w-full h-auto rounded ${!image.bigUrl ? '' : 'cursor-pointer'}`}
                       onClick={()=> openModal(image, project.images!, index)}
                     />
                     {image.description && 
