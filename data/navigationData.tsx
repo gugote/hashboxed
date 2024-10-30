@@ -19,8 +19,8 @@ export const NavigationData: NavigationDataTypes[] = [
     description: "Everything else",
   },
   {
-    label: "Works",
-    href: "/works",
+    label: "Work",
+    href: "/work",
     active: true,
     icon: <BriefcaseIcon className="w-full" />,
     description: "View Hashboxed latest works",

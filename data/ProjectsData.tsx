@@ -17,7 +17,7 @@ export const ProjectsData: ProjectsDataTypes[] = [
     title: "Alphacast",
     href: "https://www.alphacast.io",
     task: "User Navigation - UX Redesign",
-    description: "We focused on improving user navigation within the app, making it easier for users to locate their repositories and clearly understand their current position and objectives.<br><br> We made design adjustments to the UI, using the same elements but adjusting spacing and title weights to enhance readability, along with minor visual refinements.",
+    description: "I focused on improving user navigation within the app, making it easier for users to locate their repositories and clearly understand their current position and objectives.<br><br> I made design adjustments to the UI, using the same elements but adjusting spacing and title weights to enhance readability, along with minor visual refinements.",
     tech: [
       'Figma', 
       'Pen and Paper',
@@ -67,11 +67,6 @@ export const ProjectsData: ProjectsDataTypes[] = [
     hasNDA: true,
     images: [
       {
-        url: "ring/ring01.jpg",
-        bigUrl: "",
-        description: "Web Implementation and maintenance of the Base Ring UI Kit / Design System during my time at the Billing Team"
-      },
-      {
         url: "ring/ring02.jpg",
         bigUrl: "",
         description: "User Main Dashboard Video Events Redesign / Frontend Implementation"
@@ -86,6 +81,11 @@ export const ProjectsData: ProjectsDataTypes[] = [
         bigUrl: "",
         description: "User Main Dashboard Billing and Plans Redesign / Frontend Implementation"
       },
+      {
+        url: "ring/ring01.jpg",
+        bigUrl: "",
+        description: "Web Implementation and maintenance of the Base Ring UI Kit / Design System during my time at the Billing Team"
+      }
     ],
   },
   {
