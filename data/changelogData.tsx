@@ -12,4 +12,8 @@ export const ChangelogData: ChangelogDataTypes[] = [
     date: 'October 30th, 2024',
     copy: 'Fixed some typos and mobile bugs on the (now) Work section. Also renamed works to Work, reads better that way.<br><br>Added a Changelog section to keep track of these fun little updates.'
   },
+  {
+    date: 'November 6th, 2024',
+    copy: 'Replaced Favicon.<br><br>Started working on the Design Crit section.'
+  },
 ] 
