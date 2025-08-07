@@ -9,12 +9,12 @@ export default function Works() {
     <>
       <div className="stripes bg-works-bg-stripes w-full h-[170px] bg-cover absolute bottom-[-100px] z-10 hidden lg:inline"></div>
       <div className="works relative w-full bg-zinc-200">
-        <div className="background bg-works-bg-01 h-dvh bg-cover bg-bottom">
-          <Header layoutClass="pt-5 w-[calc(100%-40px)] max-w-[1000px] mx-auto"/>
+        <div className="background bg-works-bg-02 h-dvh bg-cover bg-bottom">
+          <Header layoutClass="pt-10 w-[calc(100%-40px)] max-w-[1000px] mx-auto"/>
           <div className="container w-[calc(100%-40px)] max-w-[1000px] mx-auto relative">
             <p className="my-5 text-sm text-white bg-red-400 rounded-lg p-3 lg:hidden">While I believe in a mobile-first world, I also believe that the work I do is best appreciated on a big screen for portfolio purposes, so it may not render perfectly here.</p>
-            <h1 className="text-[100px] font-extrabold tracking-tighter text-white mt-[200px] drop-shadow-2xl">Work</h1>
-            <p className="mb-[50px] w-full lg:w-1/2 text-[20px] text-white font-extrabold tracking-tighter drop-shadow-xl">I can craft smart, modern, and scalable user interfaces. Specializing in MVPs and smart design consulting, I focus on delivering creative and pixel perfect solutions that work efficiently and look great.</p>
+            <h1 className="text-[100px] font-extrabold tracking-tighter text-copy mt-[200px] drop-shadow-2xl">Work</h1>
+            <p className="mb-[50px] w-full lg:w-1/2 text-[20px] text-copy font-extrabold tracking-tighter drop-shadow-xl">Specializing in MVPs and smart design consulting for startups, I can design smart, modern, and scalable user interfaces. I focus on delivering creative solutions that work efficiently and look great.</p>
             <ProjectCards layoutClass="z-30 relative"/>
             <div className='footer w-full justify-center flex flex-row my-5 py-5 border-t-[0.5px]'>
               <div className="logo mr-5 mb-5 w-8 h-8 block relative">

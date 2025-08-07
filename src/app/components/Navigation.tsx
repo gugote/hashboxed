@@ -1,47 +1,78 @@
 "use client";
-// React / Frameworks
+import * as motion from "motion/react-client"
 import { useState } from "react";
 import Link from "next/link";
-// Components
-// Assets
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
-// Data
 import { NavigationData } from "../../../data/navigationData";
-
+import { usePathname } from "next/navigation";
+import { AnimatePresence } from "motion/react";
 interface NavigationProps {
   layoutClass?: string
+  isWorks?: boolean
 }
 
-export default function Navigation({ layoutClass }: NavigationProps) {
-  
+export default function Navigation({ isWorks, layoutClass }: NavigationProps) {
   const [menu, setMenu] = useState(false);
-  
   const handleMenu = () => {
     setMenu(!menu);
   }
 
+  const isHere = usePathname()
+
+  // Function to check if the current pathname matches the link
+  const isActiveLink = (href: string) => {
+    if (href === "/" && isHere === "/") {
+      return true;
+    }
+    if (href !== "/" && isHere.startsWith(href)) {
+      return true;
+    }
+    return false;
+  };
 
   return(
-    <nav className={`${layoutClass} z-10`}>
-      <div className="z-10 relative p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">
-        {menu ? (
-          <XMarkIcon className="w-5 h-5 cursor-pointer" onClick={handleMenu} />
-        ) : (
-          <Bars3Icon className="w-5 h-5 cursor-pointer dark:text-white" onClick={handleMenu} />
-        )}
-      </div>
-      {menu && (
-        <div className="border shadow-lg pl-5 pr-5 py-5 absolute top-[-10px] right-[-10px] bg-white rounded-md w-[250px]">
-          { NavigationData.map((item) => 
-            item.active ? (
-              <Link key={item.label} href={item.href} rel="noopener" className="uppercase font-semibold text-sm mb-3 last:mb-0 flex flex-row py-2 px-2 hover:bg-zinc-100 items-center w-[85%] rounded-lg">
-                <span className="w-6 mr-2">{item.icon}</span>
-                <span>{item.label}</span>
-              </Link>
-            ) : null
+    <div className="relative">
+      <nav className={`${layoutClass} z-10 w-[37px]`}>
+        <div
+          className={`z-10 relative p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 ${(isWorks) ? "bg-gray-200" : ""} ${(menu) ? 'bg-gray-200':''}`}
+        >
+          {menu ? (
+            <XMarkIcon className={`w-5 h-5 cursor-pointer hover:text-orange-500 ${menu ? 'text-orange-500' : ''}`} onClick={handleMenu} />
+          ) : (
+            <Bars3Icon className="w-5 h-5 cursor-pointer dark:text-white hover:text-orange-500" onClick={handleMenu} />
           )}
         </div>
-      )}
-    </nav>
+      </nav>
+      <AnimatePresence>
+        {menu && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1}}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 1.2,
+              type: "spring",
+            }}
+          >
+            <div className="bg-gray-200 p-2 rounded-md absolute right-0 top-11 ${}">
+              { NavigationData.map((item) => 
+                item.active ? (
+                  <Link 
+                    key={item.label} 
+                    href={item.href} 
+                    rel="noopener" 
+                    className={`text-xs uppercase font-semibold block p-1 hover:text-orange-500 ${
+                      isActiveLink(item.href) ? "text-orange-500" : ""
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                  </Link>
+                ) : null
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
