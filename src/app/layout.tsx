@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./components/ThemeProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial'],
+});
 
 export const metadata: Metadata = {
   title: "Hashboxed.com :: UI/UX Design - Frontend Development",
@@ -17,10 +21,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} text-copy dark:text-dark-copy dark:bg-black`}>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+      <body className={`${inter.className} text-copy`}>
+        {children}
       </body>
     </html>
   );

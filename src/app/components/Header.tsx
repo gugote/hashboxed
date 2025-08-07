@@ -1,14 +1,11 @@
 "use client"
 import { motion } from "motion/react";
-import { useTheme } from "./ThemeProvider";
 import Navigation from "./Navigation";
-import ToggleTheme from "./ToggleTheme";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 interface HeaderProps {
   layoutClass?: string;
-  isWorks?: boolean;
 }
 
 export default function Header({ layoutClass }: HeaderProps){
@@ -30,13 +27,8 @@ export default function Header({ layoutClass }: HeaderProps){
     duration: 0.5,
   }
 
-  const { theme } = useTheme();
-  const badgeColor = theme === 'light' ? '#000000' : '#ffffff';
-  const hashColor = theme === 'light' ? '#ffffff' : '#000000';
-
-  const isWorks = usePathname().includes('work');
-
-  console.log('header' + isWorks);
+  const badgeColor = '#3e3e3e';
+  const hashColor = '#ffffff';
 
   const router = useRouter();
   const goHome = () => {
@@ -44,8 +36,8 @@ export default function Header({ layoutClass }: HeaderProps){
   }
 
   return (
-    <header className={`${layoutClass} relative flex flex-row align-middle justify-between`}>
-      <div onClick={goHome} className="flex flex-row cursor-pointer w-4/5"
+    <header className={`${layoutClass}`}>
+      <div onClick={goHome} className="flex flex-row cursor-pointer"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -63,13 +55,10 @@ export default function Header({ layoutClass }: HeaderProps){
             <path fillRule="evenodd" clipRule="evenodd" d="M15.4591 23.8074L16.1487 19.9517H18.6878L19.3148 16.817H23.484L22.857 19.9517H25.0513L25.6783 16.817H29.8475L29.2205 19.9517H31.791L31.1014 23.8074H28.4995L27.9666 26.566H30.6625L29.9729 30.4217H27.2143L26.6187 33.5564H22.4495L23.0451 30.4217H20.8508L20.2552 33.5564H16.086L16.6816 30.4217H14.3306L15.0202 26.566H17.4339L17.9668 23.8074H15.4591ZM22.136 23.8074L21.6031 26.566H23.7974L24.3303 23.8074H22.136Z"/>
           </svg>
         </div>
-        <h1 className="tracking-tighter font-extrabold text-3xl mt-[3px] dark:text-white">Hashboxed</h1>
+        <h1 className="tracking-tighter font-extrabold text-3xl mt-[3px]">Hashboxed</h1>
       </div>
-      <div className="w-1/5 flex flex-row items-end justify-end">
-        {!isWorks &&(
-          <ToggleTheme />
-        )}
-        <Navigation isWorks={isWorks} />
+      <div className="flex flex-col ml-[49px]">
+        <Navigation/>
       </div>
     </header>
   )

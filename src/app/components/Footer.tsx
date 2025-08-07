@@ -19,6 +19,7 @@ export default function Footer(){
               src={FormosaIcon}
               height={0}
               width={0}
+              priority
               className="w-full shadow-sm"
             />
           </Link>
@@ -39,6 +40,7 @@ export default function Footer(){
           src={Gugo}
           height={0}
           width={0}
+          priority
           className="w-1/3 max-w-[110px] absolute -top-10 right-3"
         />
       </div>

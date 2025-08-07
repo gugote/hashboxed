@@ -14,6 +14,43 @@ export interface ProjectsDataTypes {
 export const ProjectsData: ProjectsDataTypes[] = [
   {
     active: true,
+    title: "Ring.com",
+    href: "https://www.ring.com",
+    task: "UI Design, Design Engineering and Frontend Development",
+    description: "Building on the direction and original concepts from the Design Team, I led the team responsible for much of the Ring website between 2014 and 2019, serving as a bridge between developers and designers to ensure each feature achieved the best possible outcome.<br><br>Since 2019, I've been part of the Ventures team, contributing to design and frontend development for internal applications.",
+    tech: [
+      'Sketch', 
+      'Pen and Paper',
+      'React + Vue + TailwindCSS',
+    ],
+    hasCS: false,
+    CSLink: '',
+    hasNDA: true,
+    images: [
+      {
+        url: "ring/ring02.jpg",
+        bigUrl: "",
+        description: "User Main Dashboard Video Events Redesign / Frontend Implementation"
+      },
+      {
+        url: "ring/ring03.jpg",
+        bigUrl: "",
+        description: "User Main Dashboard Billing and Plans Redesign / Frontend Implementation"
+      },
+      {
+        url: "ring/ring04.jpg",
+        bigUrl: "",
+        description: "User Main Dashboard Billing and Plans Redesign / Frontend Implementation"
+      },
+      {
+        url: "ring/ring01.jpg",
+        bigUrl: "",
+        description: "Web Implementation and maintenance of the Base Ring UI Kit / Design System during my time at the Billing Team"
+      }
+    ],
+  },
+  {
+    active: true,
     title: "Alphacast",
     href: "https://www.alphacast.io",
     task: "User Navigation - UX Redesign",
@@ -49,43 +86,6 @@ export const ProjectsData: ProjectsDataTypes[] = [
         bigUrl: "alphacast/04b.jpg",
         description: "Redesigned cards giving them better readability and easy access to the card tools and status."
       },
-    ],
-  },
-  {
-    active: true,
-    title: "Ring",
-    href: "https://www.ring.com",
-    task: "Design Engineering and Frontend Development",
-    description: "Working from the direction and original concepts provided by the Design Team, I led the team that built much of the Ring website between 2014 and 2019, acting as a bridge between developers and designers to help achieve the best possible outcome for each feature.<br><br>After 2019, I transitioned to my current role on the Ventures team, where I assist with design and frontend development for internal apps.",
-    tech: [
-      'Sketch', 
-      'Pen and Paper',
-      'React + Vue + TailwindCSS',
-    ],
-    hasCS: false,
-    CSLink: '',
-    hasNDA: true,
-    images: [
-      {
-        url: "ring/ring02.jpg",
-        bigUrl: "",
-        description: "User Main Dashboard Video Events Redesign / Frontend Implementation"
-      },
-      {
-        url: "ring/ring03.jpg",
-        bigUrl: "",
-        description: "User Main Dashboard Billing and Plans Redesign / Frontend Implementation"
-      },
-      {
-        url: "ring/ring04.jpg",
-        bigUrl: "",
-        description: "User Main Dashboard Billing and Plans Redesign / Frontend Implementation"
-      },
-      {
-        url: "ring/ring01.jpg",
-        bigUrl: "",
-        description: "Web Implementation and maintenance of the Base Ring UI Kit / Design System during my time at the Billing Team"
-      }
     ],
   },
   {
