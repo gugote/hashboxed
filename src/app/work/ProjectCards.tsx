@@ -99,7 +99,7 @@ export default function ProjectCards({ layoutClass }: ProjectCardsProps) {
                       onClick={()=> openModal(image, project.images!, index)}
                     />
                     {image.description && 
-                      <p className="p-2 text-center text-xs">{image.description}</p>
+                      <p className="px-2 py-5 text-center text-xs">{image.description}</p>
                     }
                   </div>
                 ))}
