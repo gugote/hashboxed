@@ -78,6 +78,7 @@ export default function Alphacast(){
   const [prevImageLoaded07, setPrevImageLoaded07] = useState(false);
   const [prevImageLoaded08, setPrevImageLoaded08] = useState(false);
   const [prevImageLoaded09, setPrevImageLoaded09] = useState(false);
+  const [prevImageLoaded10, setPrevImageLoaded10] = useState(false);
   const [isInView, setIsInView] = useState(false)
   const dashboardRef = useRef<HTMLDivElement>(null)
   const [hoveredPoint, setHoveredPoint] = useState<number | null>(null)
@@ -422,24 +423,18 @@ export default function Alphacast(){
             </div>
           </div>
         </section>
-        {/* <section className="container mx-auto mb-20">
-          <h2 className="text-4xl font-black tracking-tight mb-5">Testimonials</h2>
-          <div className="flex flex-row justify-between">
-            <div className="w-[calc(50%-20px)] card shadow-sm">
-              <div className="flex flex-row justify-between">
-                <Skeleton className="w-[80px] h-[80px] bg-slate-100 rounded-full" />
-              </div>
-            </div>
-            <div className="w-[calc(50%-20px)] card shadow-sm">
-
-            </div>
-          </div>
-        </section> */}
-        <section className="container mx-auto mb-20">
+        <section className="container mx-auto pb-40 relative overflow-hidden">
           <h2 className="text-4xl font-black tracking-tight mb-5">We can help you too.</h2>
           <h2>Get in touch and let&apos;s make something awesome together!</h2>
           <p>We&apos;re pumped to help you take your project to the next level.</p>
-          <p><a href="mailto:cb@hashboxed.com">cb@hashboxed.com</a></p>
+          <p className="mt-10"><a href="mailto:cb@hashboxed.com" className="px-8 py-4 text-2xl font-bold tracking-tighter text-white rounded-full" style={{ background: alphacast.color }}>cb@hashboxed.com</a></p>
+          <Image
+            src="/works/alphacast/pencil.png"
+            alt="Hashboxed Smart Design Consulting"
+            width={250}
+            height={200}
+            className="h-[500px] w-[500px] absolute bottom-[-200px] right-10 opacity-45 rotate-[15deg]"
+          />
         </section>
       </div>
     </>    
