@@ -14,6 +14,45 @@ export interface ProjectsDataTypes {
 export const ProjectsData: ProjectsDataTypes[] = [
   {
     active: true,
+    title: "Alphacast",
+    href: "https://www.alphacast.io",
+    task: "User Navigation - UX Redesign",
+    description: "I focused on improving user navigation within the app, making it easier for users to locate their repositories and clearly understand their current position and objectives.<br><br> I made design adjustments to the UI, using the same elements but adjusting spacing and title weights to enhance readability, along with minor visual refinements.",
+    tech: [
+      'Figma', 
+      'Pen and Paper',
+      'User Interviews',
+      'User Experience',
+      'Smart Design Service'
+    ],
+    hasCS: true,
+    CSLink: 'alphacast',
+    hasNDA: false,
+    images: [
+      {
+        url: "alphacast/01.jpg",
+        bigUrl: "alphacast/01b.jpg",
+        description: "Old Homepage before the redesign, cluttered interface with no visual hierarchy."
+      },
+      {
+        url: "alphacast/02.jpg",
+        bigUrl: "alphacast/02b.jpg",
+        description: "Redesigned Homepage with focus on the general navigation and layout improvement."
+      },
+      {
+        url: "alphacast/03.jpg",
+        bigUrl: "alphacast/03b.jpg",
+        description: "New Teams page with all the related info at a single glance."
+      },
+      {
+        url: "alphacast/04.jpg",
+        bigUrl: "alphacast/04b.jpg",
+        description: "Redesigned cards giving them better readability and easy access to the card tools and status."
+      },
+    ],
+  },
+  {
+    active: true,
     title: "Ring.com",
     href: "https://www.ring.com",
     task: "UI Design, Design Engineering and Frontend Development",
@@ -47,45 +86,6 @@ export const ProjectsData: ProjectsDataTypes[] = [
         bigUrl: "",
         description: "Web Implementation and maintenance of the Base Ring UI Kit / Design System during my time at the Billing Team"
       }
-    ],
-  },
-  {
-    active: true,
-    title: "Alphacast",
-    href: "https://www.alphacast.io",
-    task: "User Navigation - UX Redesign",
-    description: "I focused on improving user navigation within the app, making it easier for users to locate their repositories and clearly understand their current position and objectives.<br><br> I made design adjustments to the UI, using the same elements but adjusting spacing and title weights to enhance readability, along with minor visual refinements.",
-    tech: [
-      'Figma', 
-      'Pen and Paper',
-      'User Interviews',
-      'User Experience',
-      'Smart Design Service'
-    ],
-    hasCS: false,
-    CSLink: 'alphacast',
-    hasNDA: false,
-    images: [
-      {
-        url: "alphacast/01.jpg",
-        bigUrl: "alphacast/01b.jpg",
-        description: "Old Homepage"
-      },
-      {
-        url: "alphacast/02.jpg",
-        bigUrl: "alphacast/02b.jpg",
-        description: "Redesigned Homepage with focus on the general navigation and layout improvement."
-      },
-      {
-        url: "alphacast/03.jpg",
-        bigUrl: "alphacast/03b.jpg",
-        description: "New Teams page with all the related info at a single glance."
-      },
-      {
-        url: "alphacast/04.jpg",
-        bigUrl: "alphacast/04b.jpg",
-        description: "Redesigned cards giving them better readability and easy access to the card tools and status."
-      },
     ],
   },
   {

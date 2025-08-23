@@ -17,9 +17,9 @@ const config: Config = {
       },
       backgroundImage: {
         "park": "url('/footer.png')",
-        "works-bg-01": "url('/works/bg/cable-car.jpg')",
-        "works-bg-02": "url('/works/bg/works.jpg')",
-        "works-bg-stripes": "url('/works/bg/stripes.svg')",
+        "works-bg-01": "url('/bg/cable-car.jpg')",
+        "works-bg-02": "url('/bg/works.jpg')",
+        "works-bg-stripes": "url('/bg/stripes.svg')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",

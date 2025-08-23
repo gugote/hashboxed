@@ -16,4 +16,8 @@ export const ChangelogData: ChangelogDataTypes[] = [
     date: 'November 6th, 2024',
     copy: 'Replaced Favicon.<br><br>Started working on the Design Crit section.'
   },
+  {
+    date: 'August 23rd, 2025',
+    copy: 'Added a Case Study for Alphacast. Overall design details improvemens.'
+  },
 ] 

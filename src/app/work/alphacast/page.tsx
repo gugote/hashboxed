@@ -69,16 +69,11 @@ const interactivePoints = [
 ]
 
 export default function Alphacast(){
-  const [prevImageLoaded01, setPrevImageLoaded01] = useState(false);
-  const [prevImageLoaded02, setPrevImageLoaded02] = useState(false);
-  const [prevImageLoaded03, setPrevImageLoaded03] = useState(false);
-  const [prevImageLoaded04, setPrevImageLoaded04] = useState(false);
-  const [prevImageLoaded05, setPrevImageLoaded05] = useState(false);
-  const [prevImageLoaded06, setPrevImageLoaded06] = useState(false);
-  const [prevImageLoaded07, setPrevImageLoaded07] = useState(false);
-  const [prevImageLoaded08, setPrevImageLoaded08] = useState(false);
-  const [prevImageLoaded09, setPrevImageLoaded09] = useState(false);
-  const [prevImageLoaded10, setPrevImageLoaded10] = useState(false);
+  const [imageLoadedStates, setImageLoadedStates] = useState<Record<string, boolean>>({});
+
+  const setImageLoaded = (imageKey: string) => {
+    setImageLoadedStates(prev => ({ ...prev, [imageKey]: true }));
+  };
   const [isInView, setIsInView] = useState(false)
   const dashboardRef = useRef<HTMLDivElement>(null)
   const [hoveredPoint, setHoveredPoint] = useState<number | null>(null)
@@ -146,10 +141,10 @@ export default function Alphacast(){
           </div>
         </section>
         <section className="container mx-auto mb-20">
-          <h2 className="text-4xl font-black tracking-tight mb-10">Initial Observations</h2>
+          <h2 className="text-4xl font-black tracking-tight mb-10">UI Problems Before the Redesign</h2>
           <div className="w-full flex flex-row justify-between gap-5 mx-auto mb-20">
             <div className="relative h-fit w-[250px]">
-              {!prevImageLoaded01 && (
+              {!imageLoadedStates['01'] && (
                 <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
               )}
               <div>
@@ -159,15 +154,15 @@ export default function Alphacast(){
                   width={250}
                   height={200}
                   className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
-                    prevImageLoaded01 ? "opacity-100" : "opacity-0"
+                    imageLoadedStates['01'] ? "opacity-100" : "opacity-0"
                   }`}
-                  onLoad={() => setPrevImageLoaded01(true)}
+                  onLoad={() => setImageLoaded('01')}
                 />
                 <p className="text-xs mt-3 text-left px-1">No visual distinction between the header, sidebar, and content area.</p>
               </div>
             </div>
             <div className="relative h-fit w-[250px]">
-              {!prevImageLoaded02 && (
+              {!imageLoadedStates['02'] && (
                 <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
               )}
               <div>
@@ -177,15 +172,15 @@ export default function Alphacast(){
                   width={250}
                   height={200}
                   className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
-                    prevImageLoaded02 ? "opacity-100" : "opacity-0"
+                    imageLoadedStates['02'] ? "opacity-100" : "opacity-0"
                   }`}
-                  onLoad={() => setPrevImageLoaded02(true)}
+                  onLoad={() => setImageLoaded('02')}
                 />
                 <p className="text-xs mt-3 text-left px-1">No hierarchy between elements; everything looked the same.</p>
               </div>
             </div>
             <div className="relative h-fit w-[250px]">
-              {!prevImageLoaded03 && (
+              {!imageLoadedStates['03'] && (
                 <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
               )}
               <div>
@@ -195,15 +190,15 @@ export default function Alphacast(){
                   width={250}
                   height={200}
                   className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
-                    prevImageLoaded03 ? "opacity-100" : "opacity-0"
+                    imageLoadedStates['03'] ? "opacity-100" : "opacity-0"
                   }`}
-                  onLoad={() => setPrevImageLoaded03(true)}
+                  onLoad={() => setImageLoaded('03')}
                 />
                 <p className="text-xs mt-3 text-left px-1">No visual cues for identifying owned vs shared repositories.</p>
               </div>
             </div>
             <div className="relative h-fit w-[250px]">
-              {!prevImageLoaded04 && (
+              {!imageLoadedStates['04'] && (
                 <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
               )}
               <div>
@@ -213,9 +208,9 @@ export default function Alphacast(){
                   width={250}
                   height={200}
                   className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
-                    prevImageLoaded04 ? "opacity-100" : "opacity-0"
+                    imageLoadedStates['04'] ? "opacity-100" : "opacity-0"
                   }`}
-                  onLoad={() => setPrevImageLoaded04(true)}
+                  onLoad={() => setImageLoaded('04')}
                 />
                 <p className="text-xs mt-3 text-left px-1">The &quot;Create New&quot; button was buried in the header, mixed with account-related elements, which caused confusion and broke context.</p>
               </div>
@@ -235,7 +230,7 @@ export default function Alphacast(){
               style={{ willChange: 'transform, opacity' }}
             >
               <div className="mb-20">
-                {!prevImageLoaded05 && (
+                {!imageLoadedStates['05'] && (
                   <Skeleton className="absolute inset-0 h-[200px] w-[1280px] bg-slate-100 rounded" />
                 )}
                 <Image
@@ -244,9 +239,9 @@ export default function Alphacast(){
                   width={1280}
                   height={200}
                   className={`h-[] w-full object-cover bg-slate-100 rounded transition-opacity duration-300 border shadow-sm ${
-                    prevImageLoaded05 ? "opacity-100" : "opacity-0"
+                    imageLoadedStates['05'] ? "opacity-100" : "opacity-0"
                   }`}
-                  onLoad={() => setPrevImageLoaded05(true)}
+                  onLoad={() => setImageLoaded('05')}
                 />
               </div>
               {/* Interactive Points */}
@@ -301,7 +296,7 @@ export default function Alphacast(){
           <h2 className="text-4xl font-black tracking-tight mb-10">More UI Refinements</h2>
           <div className="w-full flex flex-row justify-between gap-5 mx-auto mb-20">
             <div className="relative h-fit w-[250px]">
-              {!prevImageLoaded06 && (
+              {!imageLoadedStates['06'] && (
                 <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
               )}
               <div>
@@ -311,15 +306,15 @@ export default function Alphacast(){
                   width={250}
                   height={200}
                   className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
-                    prevImageLoaded06 ? "opacity-100" : "opacity-0"
+                    imageLoadedStates['06'] ? "opacity-100" : "opacity-0"
                   }`}
-                  onLoad={() => setPrevImageLoaded06(true)}
+                  onLoad={() => setImageLoaded('06')}
                 />
                 <p className="text-xs mt-3 text-left px-1">Enhanced asset card design for consistency, clarity, and better interaction.</p>
               </div>
             </div>
             <div className="relative h-fit w-[250px]">
-              {!prevImageLoaded07 && (
+              {!imageLoadedStates['07'] && (
                 <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
               )}
               <div>
@@ -329,15 +324,15 @@ export default function Alphacast(){
                   width={250}
                   height={200}
                   className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
-                    prevImageLoaded07 ? "opacity-100" : "opacity-0"
+                    imageLoadedStates['07'] ? "opacity-100" : "opacity-0"
                   }`}
-                  onLoad={() => setPrevImageLoaded07(true)}
+                  onLoad={() => setImageLoaded('07')}
                 />
                 <p className="text-xs mt-3 text-left px-1">Moved internal tab navigation to a more contextual top-level position.</p>
               </div>
             </div>
             <div className="relative h-fit w-[250px]">
-              {!prevImageLoaded08 && (
+              {!imageLoadedStates['08'] && (
                 <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
               )}
               <div>
@@ -347,15 +342,15 @@ export default function Alphacast(){
                   width={250}
                   height={200}
                   className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
-                    prevImageLoaded08 ? "opacity-100" : "opacity-0"
+                    imageLoadedStates['08'] ? "opacity-100" : "opacity-0"
                   }`}
-                  onLoad={() => setPrevImageLoaded08(true)}
+                  onLoad={() => setImageLoaded('08')}
                 />
                 <p className="text-xs mt-3 text-left px-1">On team pages, added clearer visual cues to identify team-owned repositories, including a “Follow” button and icons to indicate access level.</p>
               </div>
             </div>
             <div className="relative h-fit w-[250px]">
-              {!prevImageLoaded09 && (
+              {!imageLoadedStates['09'] && (
                 <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
               )}
               <div>
@@ -365,9 +360,9 @@ export default function Alphacast(){
                   width={250}
                   height={200}
                   className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
-                    prevImageLoaded09 ? "opacity-100" : "opacity-0"
+                    imageLoadedStates['09'] ? "opacity-100" : "opacity-0"
                   }`}
-                  onLoad={() => setPrevImageLoaded09(true)}
+                  onLoad={() => setImageLoaded('09')}
                 />
                 <p className="text-xs mt-3 text-left px-1">Simplified team cards by relocating metadata to a side panel and grouping team members in a compact layout.</p>
               </div>
@@ -427,7 +422,7 @@ export default function Alphacast(){
           <h2 className="text-4xl font-black tracking-tight mb-5">We can help you too.</h2>
           <h2>Get in touch and let&apos;s make something awesome together!</h2>
           <p>We&apos;re pumped to help you take your project to the next level.</p>
-          <p className="mt-10"><a href="mailto:cb@hashboxed.com" className="px-8 py-4 text-2xl font-bold tracking-tighter text-white rounded-full" style={{ background: alphacast.color }}>cb@hashboxed.com</a></p>
+          <p className="mt-10 inline-block group transition-all duration-300 hover:rotate-[-1deg] hover:shadow-md"><a href="mailto:cb@hashboxed.com" className="px-8 py-4 text-2xl font-bold tracking-tighter text-white rounded-full" style={{ background: alphacast.color }}>cb@hashboxed.com</a></p>
           <Image
             src="/works/alphacast/pencil.png"
             alt="Hashboxed Smart Design Consulting"

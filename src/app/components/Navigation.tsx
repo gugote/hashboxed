@@ -1,42 +1,63 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { NavigationData } from "../../../data/navigationData";
 import { usePathname } from "next/navigation";
 
 export default function Navigation() {
-  const isHere = usePathname()
+  const pathname = usePathname();
 
-  // Function to check if the current pathname matches the link
-  const isActiveLink = (href: string) => {
-    if (href === "/" && isHere === "/") {
-      return true;
+  // Function to generate navigation items based on URL structure
+  const generateNavigationItems = () => {
+    if (pathname === "/") {
+      return [{ label: "Home", href: "/", isActive: true }];
     }
-    if (href !== "/" && isHere.startsWith(href)) {
-      return true;
-    }
-    return false;
+
+    const segments = pathname.split("/").filter(Boolean);
+    const items = [{ label: "Home", href: "/", isActive: false }];
+    
+    let currentPath = "";
+    
+    segments.forEach((segment, index) => {
+      currentPath += `/${segment}`;
+      
+      // Convert segment to readable label
+      const label = segment
+        .split("-")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+      
+      const isActive = index === segments.length - 1;
+      
+      items.push({
+        label,
+        href: currentPath,
+        isActive
+      });
+    });
+    
+    return items;
   };
 
-  return(
+  const navigationItems = generateNavigationItems();
+
+  return (
     <div>
-      { NavigationData.map((item) => 
-        item.active ? (
-          <React.Fragment key={item.label}>
-            <Link 
-              key={item.label} 
-              href={item.href} 
-              rel="noopener" 
-              className={`text-xs uppercase font-semibold p-1 hover:text-orange-500 ${
-                isActiveLink(item.href) ? "text-orange-500" : ""
-              }`}
-            >
-              <span>{item.label}</span>
-            </Link>
+      {navigationItems.map((item, index) => (
+        <React.Fragment key={item.href}>
+          <Link 
+            href={item.href} 
+            rel="noopener" 
+            className={`text-xs uppercase font-semibold p-1 hover:text-orange-500 ${
+              item.isActive ? "text-orange-500" : ""
+            }`}
+          >
+            <span>{item.label}</span>
+          </Link>
+          {index < navigationItems.length - 1 && (
             <span className="last:hidden">/</span>
-          </React.Fragment>
-        ) : null
-      )}
+          )}
+        </React.Fragment>
+      ))}
     </div>
   );
 }

@@ -10,7 +10,7 @@ export default function Works() {
       <div className="stripes bg-works-bg-stripes w-full h-[170px] bg-cover absolute bottom-[-100px] z-10 hidden lg:inline"></div>
       <div className="works relative w-full bg-zinc-200">
         <div className="background bg-works-bg-02 h-dvh bg-cover bg-bottom">
-          <Header layoutClass="pt-10 w-[calc(100%-40px)] max-w-[1000px] mx-auto"/>
+          <Header layoutClass="container pt-10 w-[calc(100%-40px)] max-w-[1000px] mx-auto"/>
           <div className="container w-[calc(100%-40px)] max-w-[1000px] mx-auto relative">
             <p className="my-5 text-sm text-white bg-red-400 rounded-lg p-3 lg:hidden">While I believe in a mobile-first world, I also believe that the work I do is best appreciated on a big screen for portfolio purposes, so it may not render perfectly here.</p>
             <h1 className="text-[100px] font-extrabold tracking-tighter text-copy mt-[200px] drop-shadow-2xl">Work</h1>
