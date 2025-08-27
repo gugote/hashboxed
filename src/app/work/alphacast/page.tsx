@@ -121,7 +121,7 @@ export default function Alphacast(){
           <div className="w-[calc(35%-20px)]">
             <div className="card">
               <Image
-                src="/works/alphacast/alphacast.svg"
+                src="/projects/alphacast/alphacast.svg"
                 alt="Alphacast.io"
                 width={300}
                 height={100}
@@ -149,7 +149,7 @@ export default function Alphacast(){
               )}
               <div>
                 <Image
-                  src="/works/alphacast/alphacast-cs-01.png"
+                  src="/projects/alphacast/alphacast-cs-01.png"
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
@@ -167,7 +167,7 @@ export default function Alphacast(){
               )}
               <div>
                 <Image
-                  src="/works/alphacast/alphacast-cs-02.png"
+                  src="/projects/alphacast/alphacast-cs-02.png"
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
@@ -185,7 +185,7 @@ export default function Alphacast(){
               )}
               <div>
                 <Image
-                  src="/works/alphacast/alphacast-cs-03.png"
+                  src="/projects/alphacast/alphacast-cs-03.png"
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
@@ -203,7 +203,7 @@ export default function Alphacast(){
               )}
               <div>
                 <Image
-                  src="/works/alphacast/alphacast-cs-04.png"
+                  src="/projects/alphacast/alphacast-cs-04.png"
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
@@ -234,7 +234,7 @@ export default function Alphacast(){
                   <Skeleton className="absolute inset-0 h-[200px] w-[1280px] bg-slate-100 rounded" />
                 )}
                 <Image
-                  src="/works/alphacast/alphacast-cs-05.png"
+                  src="/projects/alphacast/alphacast-cs-05.png"
                   alt="Alphacast Case Study Screenshot"
                   width={1280}
                   height={200}
@@ -301,7 +301,7 @@ export default function Alphacast(){
               )}
               <div>
                 <Image
-                  src="/works/alphacast/alphacast-cs-06.png"
+                  src="/projects/alphacast/alphacast-cs-06.png"
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
@@ -319,7 +319,7 @@ export default function Alphacast(){
               )}
               <div>
                 <Image
-                  src="/works/alphacast/alphacast-cs-07.png"
+                  src="/projects/alphacast/alphacast-cs-07.png"
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
@@ -337,7 +337,7 @@ export default function Alphacast(){
               )}
               <div>
                 <Image
-                  src="/works/alphacast/alphacast-cs-08.png"
+                  src="/projects/alphacast/alphacast-cs-08.png"
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
@@ -355,7 +355,7 @@ export default function Alphacast(){
               )}
               <div>
                 <Image
-                  src="/works/alphacast/alphacast-cs-09.png"
+                  src="/projects/alphacast/alphacast-cs-09.png"
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
@@ -424,7 +424,7 @@ export default function Alphacast(){
           <p>We&apos;re pumped to help you take your project to the next level.</p>
           <p className="mt-10 inline-block group transition-all duration-300 hover:rotate-[-1deg] hover:shadow-md"><a href="mailto:cb@hashboxed.com" className="px-8 py-4 text-2xl font-bold tracking-tighter text-white rounded-full" style={{ background: alphacast.color }}>cb@hashboxed.com</a></p>
           <Image
-            src="/works/alphacast/pencil.png"
+            src="/projects/alphacast/pencil.png"
             alt="Hashboxed Smart Design Consulting"
             width={250}
             height={200}
