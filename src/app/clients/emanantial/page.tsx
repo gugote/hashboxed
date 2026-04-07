@@ -5,7 +5,7 @@ export default function EManantial() {
     <div className="mx-auto block w-[1440px]">
       <Image 
         alt="Ediciones Manantial"
-        src="/clients/emanantial/manantial-home.png"
+        src="/clients/emanantial/manantial-home-v02.png"
         width="1440"
         height="4664"
       />
