@@ -6,8 +6,9 @@ export default function EManantial() {
       <Image 
         alt="Ediciones Manantial"
         src="/clients/emanantial/manantial-home-v02.png"
-        width="1440"
-        height="4664"
+        width={1440}
+        height={4664}
+        unoptimized={true}
       />
     </div>
   )
