@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manantial — Presentación de Proyecto</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0E0D0B;
+  --surface: #161410;
+  --card: #1C1A16;
+  --border: rgba(255,255,255,0.07);
+  --border-hover: rgba(255,255,255,0.14);
+  --cream: #F5F1EA;
+  --parchment: #EDE8DE;
+  --dark: #1A1714;
+  --accent: #C5A96B;
+  --accent2: #9A7E45;
+  --text: #E8E3DA;
+  --muted: #7A7268;
+  --serif: 'EB Garamond', Georgia, serif;
+  --display: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── HEADER ── */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem; height: 56px;
+  background: rgba(14,13,11,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.header-logo {
+  font-family: var(--display);
+  font-size: 17px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--cream);
+}
+.header-meta {
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── HERO INTRO ── */
+.intro {
+  padding: 120px 3rem 60px;
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 2rem;
+}
+.intro-title {
+  font-family: var(--display);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 300; line-height: 1.0;
+  color: var(--cream);
+}
+.intro-title em {
+  font-style: italic; color: var(--accent);
+}
+.intro-sub {
+  font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); max-width: 28ch; line-height: 1.8; text-align: right;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  height: 1px; background: var(--border);
+  margin: 0 3rem;
+}
+
+/* ── SECTION LABEL ── */
+.section-label {
+  padding: 3.5rem 3rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem;
+}
+.label-tag {
+  font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--accent); padding: 4px 10px;
+  border: 1px solid rgba(197,169,107,0.3);
+}
+.label-title {
+  font-family: var(--display);
+  font-size: 1.5rem; font-weight: 400; color: var(--cream);
+}
+.label-rule { flex: 1; height: 1px; background: var(--border); }
+.label-count {
+  font-size: 11px; color: var(--muted); letter-spacing: 0.1em;
+}
+
+/* ── DESKTOP SCREENS ── */
+.screens-desktop {
+  padding: 1rem 3rem 4rem;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+
+.screen-item {
+  display: flex; flex-direction: column; gap: 1rem;
+  cursor: pointer;
+}
+.screen-frame {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: border-color 0.3s, transform 0.3s;
+  background: var(--card);
+}
+.screen-item:hover .screen-frame {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+}
+.screen-frame::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(to bottom, rgba(197,169,107,0) 70%, rgba(14,13,11,0.3) 100%);
+  pointer-events: none;
+}
+.screen-chrome {
+  background: #2A2724;
+  padding: 8px 12px;
+  display: flex; align-items: center; gap: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.chrome-dots { display: flex; gap: 5px; }
+.chrome-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+}
+.chrome-dot.r { background: #FF5F57; }
+.chrome-dot.y { background: #FFBD2E; }
+.chrome-dot.g { background: #28C840; }
+.chrome-url {
+  flex: 1; text-align: center;
+  font-size: 10px; color: rgba(255,255,255,0.25);
+  font-family: var(--sans);
+  background: rgba(255,255,255,0.04);
+  border-radius: 4px; padding: 3px 10px;
+}
+.screen-preview {
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  position: relative;
+}
+.screen-preview iframe,
+.screen-preview .mock-content {
+  width: 100%; height: 100%;
+  border: none; display: block;
+}
+
+/* Desktop mock content */
+.mock-desktop {
+  width: 100%; height: 100%;
+  transform-origin: top left;
+}
+
+.screen-info {
+  display: flex; align-items: baseline; justify-content: space-between;
+}
+.screen-name {
+  font-size: 13px; color: var(--text); font-weight: 400;
+}
+.screen-type {
+  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── MOBILE SCREENS ── */
+.screens-mobile {
+  padding: 1rem 3rem 6rem;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;
+}
+.mobile-item {
+  display: flex; flex-direction: column; gap: 1rem;
+  cursor: pointer;
+}
+.mobile-frame {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 260px;
+  border-radius: 28px;
+  border: 8px solid #2A2724;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 40px 80px rgba(0,0,0,0.6);
+  transition: transform 0.3s;
+  background: var(--card);
+}
+.mobile-item:hover .mobile-frame {
+  transform: translateY(-6px) scale(1.01);
+}
+.mobile-notch {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 80px; height: 22px;
+  background: #2A2724;
+  border-radius: 0 0 14px 14px; z-index: 10;
+}
+.mobile-preview {
+  width: 100%;
+  aspect-ratio: 9/19.5;
+  overflow: hidden;
+  position: relative;
+}
+.mobile-info {
+  display: flex; align-items: baseline; justify-content: space-between;
+  padding: 0 4px;
+}
+.mobile-name {
+  font-size: 13px; color: var(--text); font-weight: 400;
+}
+.mobile-tag {
+  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── FLOATING NAV ── */
+.fab-wrap {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+}
+.fab-panel {
+  position: absolute; bottom: 64px; right: 0;
+  width: 280px;
+  background: rgba(22,20,16,0.96);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--border-hover);
+  border-radius: 16px;
+  padding: 20px;
+  opacity: 0; pointer-events: none;
+  transform: translateY(10px) scale(0.97);
+  transition: opacity 0.25s, transform 0.25s;
+  box-shadow: 0 32px 64px rgba(0,0,0,0.7);
+}
+.fab-panel.open {
+  opacity: 1; pointer-events: all;
+  transform: translateY(0) scale(1);
+}
+.fab-section-title {
+  font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 10px; margin-top: 16px;
+}
+.fab-section-title:first-child { margin-top: 0; }
+.fab-links {
+  display: flex; flex-direction: column; gap: 2px;
+}
+.fab-link {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  font-size: 13px; color: rgba(232,227,218,0.7);
+  text-decoration: none; cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  border: none; background: none; width: 100%; text-align: left;
+}
+.fab-link:hover { background: rgba(255,255,255,0.05); color: var(--text); }
+.fab-link.active { background: rgba(197,169,107,0.1); color: var(--accent); }
+.fab-link-icon {
+  width: 28px; height: 28px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; flex-shrink: 0;
+}
+.fab-link.active .fab-link-icon {
+  background: rgba(197,169,107,0.12);
+  border-color: rgba(197,169,107,0.3);
+}
+.fab-divider { height: 1px; background: var(--border); margin: 14px 0 0; }
+.fab-btn {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  margin-left: auto;
+  box-shadow: 0 8px 24px rgba(197,169,107,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative; z-index: 1;
+}
+.fab-btn:hover { transform: scale(1.06); box-shadow: 0 12px 32px rgba(197,169,107,0.45); }
+.fab-btn svg { transition: transform 0.3s; }
+.fab-btn.open svg { transform: rotate(45deg); }
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(0,0,0,0.92);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.2s;
+}
+.lightbox.active {
+  opacity: 1; pointer-events: all;
+}
+.lb-inner {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-hover);
+  transform: scale(0.96);
+  transition: transform 0.25s;
+}
+.lightbox.active .lb-inner { transform: scale(1); }
+.lb-inner iframe { display: block; border: none; }
+.lb-close {
+  position: absolute; top: 12px; right: 12px;
+  width: 36px; height: 36px;
+  background: rgba(0,0,0,0.7); border: 1px solid var(--border-hover);
+  border-radius: 50%; cursor: pointer; color: var(--text); font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10;
+}
+.lb-label {
+  position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  background: rgba(0,0,0,0.6); padding: 6px 14px; border-radius: 20px;
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+}
+
+/* ── INLINE MINI-MOCKUPS ── */
+
+/* Shared nav styles */
+.m-nav {
+  background: #F5F1EA; border-bottom: 1px solid rgba(26,23,20,0.12);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px; height: 32px;
+}
+.m-logo { font-family: var(--display); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #1A1714; }
+.m-nav-links { display: flex; gap: 10px; }
+.m-nav-link { font-size: 6px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A4540; }
+.m-announce { background: #EDE8DE; text-align: center; padding: 3px; font-size: 5.5px; color: #4A4540; letter-spacing: 0.05em; }
+
+/* Home desktop mock */
+.mock-home-hero {
+  background: #1A1714; display: flex; height: 48%;
+}
+.mock-hero-img { width: 50%; background: #2a2520; display: flex; align-items: center; justify-content: center; }
+.mock-hero-book { width: 45px; height: 68px; background: #1a1510; border: 1px solid rgba(197,169,107,0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4px; }
+.mock-hero-book-cat { font-size: 3.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #C5A96B; margin-bottom: 3px; }
+.mock-hero-book-title { font-family: var(--display); font-size: 5px; color: #F5F1EA; text-align: center; line-height: 1.2; }
+.mock-hero-text { width: 50%; background: #1A1714; padding: 8px 10px; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+.mock-hero-cat { font-size: 4px; letter-spacing: 0.2em; text-transform: uppercase; color: #C5A96B; }
+.mock-hero-title { font-family: var(--display); font-size: 10px; color: #F5F1EA; line-height: 1.2; font-weight: 400; }
+.mock-hero-author { font-size: 5px; font-style: italic; color: rgba(245,241,234,0.5); }
+.mock-hero-cta { display: inline-block; padding: 3px 8px; border: 1px solid #C5A96B; color: #C5A96B; font-size: 4.5px; letter-spacing: 0.1em; text-transform: uppercase; width: fit-content; }
+.mock-section-head { display: flex; align-items: center; gap: 6px; padding: 6px 10px 4px; }
+.mock-section-title { font-family: var(--display); font-size: 8px; color: #1A1714; font-weight: 400; }
+.mock-section-rule { flex: 1; height: 0.5px; background: rgba(26,23,20,0.15); }
+.mock-section-link { font-size: 4px; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8078; }
+.mock-books-row { display: flex; gap: 5px; padding: 0 10px 8px; overflow: hidden; }
+.mock-book-thumb { flex: 0 0 13%; }
+.mock-book-img { aspect-ratio: 2/3; margin-bottom: 3px; }
+.mock-book-tcat { font-size: 3.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #8A8078; }
+.mock-book-ttitle { font-family: var(--display); font-size: 5px; color: #1A1714; line-height: 1.2; }
+.mock-book-tprice { font-size: 4px; color: #4A4540; }
+.mock-authors-row { display: flex; gap: 2px; padding: 0 10px; }
+.mock-author-card { flex: 1; aspect-ratio: 3/4; position: relative; overflow: hidden; }
+.mock-author-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,23,20,0.85) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 4px; }
+.mock-author-disc { font-size: 3px; letter-spacing: 0.15em; text-transform: uppercase; color: #C5A96B; }
+.mock-author-name { font-family: var(--display); font-size: 5.5px; color: #F5F1EA; }
+
+/* Catalog desktop mock */
+.mock-catalog-filters { background: #F5F1EA; padding: 6px 10px; display: flex; gap: 5px; align-items: center; border-bottom: 1px solid rgba(26,23,20,0.1); }
+.mock-filter-tag { padding: 2px 6px; border: 1px solid rgba(26,23,20,0.15); font-size: 4.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #4A4540; }
+.mock-filter-tag.active { background: #1A1714; color: #F5F1EA; border-color: #1A1714; }
+.mock-catalog-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; padding: 8px 10px; background: #FDFAF5; flex: 1; }
+.mock-cat-book { }
+.mock-cat-cover { aspect-ratio: 2/3; margin-bottom: 3px; }
+.mock-cat-name { font-family: var(--display); font-size: 4.5px; color: #1A1714; line-height: 1.2; }
+.mock-cat-auth { font-size: 3.5px; font-style: italic; color: #8A8078; }
+.mock-cat-price { font-size: 3.5px; color: #4A4540; }
+.mock-sidebar { width: 60px; flex-shrink: 0; background: #F5F1EA; border-right: 1px solid rgba(26,23,20,0.1); padding: 8px; }
+.mock-sidebar-title { font-size: 5px; letter-spacing: 0.15em; text-transform: uppercase; color: #8A8078; margin-bottom: 6px; }
+.mock-sidebar-item { font-size: 5px; color: #4A4540; padding: 3px 0; border-bottom: 1px solid rgba(26,23,20,0.07); }
+.mock-sidebar-item.active { color: #1A1714; font-weight: 500; }
+
+/* Book detail mock */
+.mock-detail-hero { background: #F5F1EA; padding: 10px; display: flex; gap: 10px; height: 52%; }
+.mock-detail-cover { flex: 0 0 35%; aspect-ratio: 2/3; height: 100%; object-fit: cover; }
+.mock-detail-info { flex: 1; display: flex; flex-direction: column; gap: 5px; justify-content: center; }
+.mock-detail-cat { font-size: 4px; letter-spacing: 0.2em; text-transform: uppercase; color: #8A8078; }
+.mock-detail-title { font-family: var(--display); font-size: 10px; color: #1A1714; line-height: 1.2; font-weight: 400; }
+.mock-detail-author { font-size: 6px; font-style: italic; color: #8A8078; }
+.mock-detail-divider { height: 0.5px; background: rgba(26,23,20,0.15); }
+.mock-detail-price { font-size: 9px; color: #1A1714; font-family: var(--display); }
+.mock-detail-cta { display: inline-block; padding: 4px 10px; background: #1A1714; color: #F5F1EA; font-size: 4.5px; letter-spacing: 0.1em; text-transform: uppercase; width: fit-content; }
+.mock-detail-desc { padding: 8px 10px; background: #FDFAF5; }
+.mock-detail-desc-title { font-size: 5px; letter-spacing: 0.15em; text-transform: uppercase; color: #8A8078; margin-bottom: 4px; }
+.mock-detail-desc-text { font-family: var(--serif); font-size: 5px; line-height: 1.7; color: #4A4540; }
+
+/* MOBILE MOCKS */
+.mm-nav { background: #F5F1EA; display: flex; align-items: center; justify-content: space-between; padding: 18px 10px 6px; border-bottom: 1px solid rgba(26,23,20,0.1); }
+.mm-logo { font-family: var(--display); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #1A1714; }
+.mm-menu { font-size: 9px; color: #4A4540; }
+.mm-announce { background: #EDE8DE; text-align: center; padding: 4px; font-size: 5px; color: #4A4540; letter-spacing: 0.05em; }
+.mm-hero { background: #1A1714; padding: 12px 10px; }
+.mm-hero-cat { font-size: 5px; letter-spacing: 0.2em; text-transform: uppercase; color: #C5A96B; margin-bottom: 4px; }
+.mm-hero-title { font-family: var(--display); font-size: 13px; color: #F5F1EA; line-height: 1.15; font-weight: 400; margin-bottom: 5px; }
+.mm-hero-author { font-size: 6px; font-style: italic; color: rgba(245,241,234,0.5); margin-bottom: 8px; }
+.mm-hero-book-img { width: 100%; aspect-ratio: 3/2; background: #2a2520; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; }
+.mm-hero-book-inner { width: 50px; height: 70px; background: #1a1510; border: 1px solid rgba(197,169,107,0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4px; }
+.mm-hero-cta { display: inline-block; padding: 4px 10px; border: 1px solid #C5A96B; color: #C5A96B; font-size: 5px; letter-spacing: 0.1em; text-transform: uppercase; }
+.mm-section-head { display: flex; align-items: center; gap: 5px; padding: 8px 10px 4px; background: #FDFAF5; }
+.mm-section-title { font-family: var(--display); font-size: 9px; color: #1A1714; }
+.mm-section-rule { flex: 1; height: 0.5px; background: rgba(26,23,20,0.15); }
+.mm-books-scroll { display: flex; gap: 6px; padding: 4px 10px 8px; background: #FDFAF5; overflow: hidden; }
+.mm-book { flex: 0 0 28%; }
+.mm-book-cover { aspect-ratio: 2/3; margin-bottom: 3px; }
+.mm-book-title { font-family: var(--display); font-size: 5px; color: #1A1714; line-height: 1.2; }
+.mm-book-price { font-size: 4px; color: #4A4540; }
+
+/* Mobile catalog */
+.mm-cat-filters { display: flex; gap: 4px; padding: 6px 10px; background: #F5F1EA; overflow: hidden; border-bottom: 1px solid rgba(26,23,20,0.1); }
+.mm-cat-filter { padding: 3px 7px; border: 1px solid rgba(26,23,20,0.15); font-size: 5px; letter-spacing: 0.08em; text-transform: uppercase; color: #4A4540; white-space: nowrap; }
+.mm-cat-filter.active { background: #1A1714; color: #F5F1EA; border-color: #1A1714; }
+.mm-cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; padding: 8px 10px; background: #FDFAF5; }
+.mm-cat-item-cover { aspect-ratio: 2/3; margin-bottom: 3px; }
+.mm-cat-item-name { font-family: var(--display); font-size: 5.5px; color: #1A1714; line-height: 1.2; }
+.mm-cat-item-price { font-size: 4.5px; color: #4A4540; }
+
+/* Mobile detail */
+.mm-det-cover { width: 100%; aspect-ratio: 3/4; }
+.mm-det-info { background: #FDFAF5; padding: 8px 10px; }
+.mm-det-cat { font-size: 5px; letter-spacing: 0.2em; text-transform: uppercase; color: #8A8078; margin-bottom: 3px; }
+.mm-det-title { font-family: var(--display); font-size: 12px; color: #1A1714; line-height: 1.2; font-weight: 400; margin-bottom: 3px; }
+.mm-det-author { font-size: 6px; font-style: italic; color: #8A8078; margin-bottom: 6px; }
+.mm-det-divider { height: 0.5px; background: rgba(26,23,20,0.15); margin-bottom: 5px; }
+.mm-det-price { font-family: var(--display); font-size: 10px; color: #1A1714; margin-bottom: 5px; }
+.mm-det-cta { display: block; padding: 6px; background: #1A1714; color: #F5F1EA; font-size: 5px; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; margin-bottom: 6px; }
+.mm-det-desc { font-family: var(--serif); font-size: 5px; line-height: 1.7; color: #4A4540; }
+
+/* Footer of page */
+.page-footer {
+  text-align: center; padding: 3rem; border-top: 1px solid var(--border);
+  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-logo">Ediciones Manantial</div>
+  <div class="header-meta">Rediseño Web — 2026</div>
+</header>
+
+<!-- INTRO -->
+<section class="intro">
+  <h1 class="intro-title">Diseño<br><em>Web</em><br>Manantial</h1>
+  <p class="intro-sub">Rediseño completo del sitio editorial.<br>6 pantallas — Desktop & Mobile.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- DESKTOP SCREENS -->
+<div class="section-label">
+  <span class="label-tag">Desktop</span>
+  <span class="label-title">Pantallas de escritorio</span>
+  <span class="label-rule"></span>
+  <span class="label-count">1440px</span>
+</div>
+
+<div class="screens-desktop">
+
+  <!-- HOME DESKTOP -->
+  <div class="screen-item" onclick="openImageView('home-d')">
+    <div class="screen-frame">
+      <div class="screen-chrome">
+        <div class="chrome-dots"><div class="chrome-dot r"></div><div class="chrome-dot y"></div><div class="chrome-dot g"></div></div>
+        <div class="chrome-url">emanantial.com.ar</div>
+      </div>
+      <div class="screen-preview">
+        <div style="width:100%;height:100%;background:#F5F1EA;overflow:hidden;display:flex;flex-direction:column;">
+          <div class="m-nav">
+            <span class="m-logo">Manantial</span>
+            <div class="m-nav-links"><span class="m-nav-link">Catálogo</span><span class="m-nav-link">Puntos de venta</span><span class="m-nav-link">Prensa</span><span class="m-nav-link">Nosotros</span></div>
+            <span class="m-nav-link">0 — $0</span>
+          </div>
+          <div class="m-announce">Envío gratis en compras a partir de $55.000</div>
+          <div class="mock-home-hero">
+            <div class="mock-hero-img">
+              <div class="mock-hero-book">
+                <div class="mock-hero-book-cat">Filosofía</div>
+                <div class="mock-hero-book-title">La sociedad del cansancio</div>
+              </div>
+            </div>
+            <div class="mock-hero-text">
+              <div class="mock-hero-cat">Filosofía</div>
+              <div class="mock-hero-title">La sociedad<br>del cansancio</div>
+              <div class="mock-hero-author">Byung-Chul Han</div>
+              <div class="mock-hero-cta">Ver más</div>
+            </div>
+          </div>
+          <div class="mock-section-head">
+            <span class="mock-section-title">Nuestro catálogo</span>
+            <span class="mock-section-rule"></span>
+            <span class="mock-section-link">Ver todo →</span>
+          </div>
+          <div class="mock-books-row">
+            <div class="mock-book-thumb"><div class="mock-book-img" style="background:linear-gradient(135deg,#d4c5a9,#b8a88a);"></div><div class="mock-book-tcat">Psic.</div><div class="mock-book-ttitle">El libro de las fobias</div><div class="mock-book-tprice">$28.300</div></div>
+            <div class="mock-book-thumb"><div class="mock-book-img" style="background:linear-gradient(135deg,#b5c4d4,#8fa8bc);"></div><div class="mock-book-tcat">Fil.</div><div class="mock-book-ttitle">Entre Hipócrates</div><div class="mock-book-tprice">$51.000</div></div>
+            <div class="mock-book-thumb"><div class="mock-book-img" style="background:linear-gradient(135deg,#2a2420,#1a1510);"></div><div class="mock-book-tcat">Fil.</div><div class="mock-book-ttitle">Estar con los muertos</div><div class="mock-book-tprice">$60.900</div></div>
+            <div class="mock-book-thumb"><div class="mock-book-img" style="background:linear-gradient(135deg,#c4b5a8,#a89080);"></div><div class="mock-book-tcat">Fil.</div><div class="mock-book-ttitle">Frantz Fanon</div><div class="mock-book-tprice">$28.300</div></div>
+            <div class="mock-book-thumb"><div class="mock-book-img" style="background:linear-gradient(135deg,#1e2830,#141c24);"></div><div class="mock-book-tcat">Fil.</div><div class="mock-book-ttitle">El gesto de Caín</div><div class="mock-book-tprice">$28.300</div></div>
+            <div class="mock-book-thumb"><div class="mock-book-img" style="background:linear-gradient(135deg,#d8c8b4,#c0a888);"></div><div class="mock-book-tcat">Fil.</div><div class="mock-book-ttitle">Una herencia</div><div class="mock-book-tprice">$31.240</div></div>
+          </div>
+          <div class="mock-section-head" style="background:#1A1714;">
+            <span class="mock-section-title" style="color:#F5F1EA;">Autores destacados</span>
+            <span class="mock-section-rule" style="background:rgba(255,255,255,0.1);"></span>
+            <span class="mock-section-link" style="color:#C5A96B;">Ver todos →</span>
+          </div>
+          <div class="mock-authors-row" style="background:#1A1714;padding:0 10px 8px;gap:2px;">
+            <div class="mock-author-card" style="background:linear-gradient(160deg,#2a2824,#1a1814);">
+              <div class="mock-author-overlay"><div class="mock-author-disc">Filosofía</div><div class="mock-author-name">Byung-Chul Han</div></div>
+            </div>
+            <div class="mock-author-card" style="background:linear-gradient(160deg,#22282e,#14181e);">
+              <div class="mock-author-overlay"><div class="mock-author-disc">Filosofía</div><div class="mock-author-name">Viktor Frankl</div></div>
+            </div>
+            <div class="mock-author-card" style="background:linear-gradient(160deg,#28241e,#181412);">
+              <div class="mock-author-overlay"><div class="mock-author-disc">Psicología</div><div class="mock-author-name">Diana Rabinovich</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="screen-info">
+      <span class="screen-name">Home</span>
+      <span class="screen-type">Desktop</span>
+    </div>
+  </div>
+
+  <!-- CATALOG DESKTOP -->
+  <div class="screen-item" onclick="openImageView('cat-d')">
+    <div class="screen-frame">
+      <div class="screen-chrome">
+        <div class="chrome-dots"><div class="chrome-dot r"></div><div class="chrome-dot y"></div><div class="chrome-dot g"></div></div>
+        <div class="chrome-url">emanantial.com.ar/shop-catalogo</div>
+      </div>
+      <div class="screen-preview">
+        <div style="width:100%;height:100%;background:#F5F1EA;overflow:hidden;display:flex;flex-direction:column;">
+          <div class="m-nav">
+            <span class="m-logo">Manantial</span>
+            <div class="m-nav-links"><span class="m-nav-link" style="color:#1A1714;font-weight:500;">Catálogo</span><span class="m-nav-link">Puntos de venta</span><span class="m-nav-link">Prensa</span></div>
+            <span class="m-nav-link">0 — $0</span>
+          </div>
+          <div class="mock-catalog-filters">
+            <span class="mock-filter-tag active">Todos</span>
+            <span class="mock-filter-tag">Filosofía</span>
+            <span class="mock-filter-tag">Psicología</span>
+            <span class="mock-filter-tag">Sociología</span>
+            <span class="mock-filter-tag">Ensayo</span>
+          </div>
+          <div style="display:flex;flex:1;overflow:hidden;">
+            <div class="mock-sidebar">
+              <div class="mock-sidebar-title">Categoría</div>
+              <div class="mock-sidebar-item active">Todos</div>
+              <div class="mock-sidebar-item">Filosofía</div>
+              <div class="mock-sidebar-item">Psicología</div>
+              <div class="mock-sidebar-item">Sociología</div>
+              <div class="mock-sidebar-item">Ensayo</div>
+              <div style="height:8px;"></div>
+              <div class="mock-sidebar-title">Editorial</div>
+              <div class="mock-sidebar-item">Manantial</div>
+              <div class="mock-sidebar-item">Herder</div>
+              <div class="mock-sidebar-item">Taugenit</div>
+            </div>
+            <div class="mock-catalog-grid">
+              <div class="mock-cat-book"><div class="mock-cat-cover" style="background:linear-gradient(135deg,#d4c5a9,#b8a88a);"></div><div class="mock-cat-name">El libro de las fobias</div><div class="mock-cat-auth">Herder</div><div class="mock-cat-price">$28.300</div></div>
+              <div class="mock-cat-book"><div class="mock-cat-cover" style="background:linear-gradient(135deg,#b5c4d4,#8fa8bc);"></div><div class="mock-cat-name">Entre Hipócrates y Sócrates</div><div class="mock-cat-auth">Herder</div><div class="mock-cat-price">$51.000</div></div>
+              <div class="mock-cat-book"><div class="mock-cat-cover" style="background:linear-gradient(135deg,#2a2420,#1a1510);"></div><div class="mock-cat-name">Estar con los muertos</div><div class="mock-cat-auth">Herder</div><div class="mock-cat-price">$60.900</div></div>
+              <div class="mock-cat-book"><div class="mock-cat-cover" style="background:linear-gradient(135deg,#c4b5a8,#a89080);"></div><div class="mock-cat-name">Frantz Fanon</div><div class="mock-cat-auth">Herder</div><div class="mock-cat-price">$28.300</div></div>
+              <div class="mock-cat-book"><div class="mock-cat-cover" style="background:linear-gradient(135deg,#1e2830,#141c24);"></div><div class="mock-cat-name">El gesto de Caín</div><div class="mock-cat-auth">Herder</div><div class="mock-cat-price">$28.300</div></div>
+              <div class="mock-cat-book"><div class="mock-cat-cover" style="background:linear-gradient(135deg,#d8c8b4,#c0a888);"></div><div class="mock-cat-name">Una herencia sin testamento</div><div class="mock-cat-auth">Herder</div><div class="mock-cat-price">$31.240</div></div>
+              <div class="mock-cat-book"><div class="mock-cat-cover" style="background:linear-gradient(135deg,#a0b4c0,#7890a0);"></div><div class="mock-cat-name">Las almas heridas</div><div class="mock-cat-auth">Herder</div><div class="mock-cat-price">$36.200</div></div>
+              <div class="mock-cat-book"><div class="mock-cat-cover" style="background:linear-gradient(135deg,#3a3030,#241e1e);"></div><div class="mock-cat-name">Inmortalidad digital</div><div class="mock-cat-auth">Herder</div><div class="mock-cat-price">$41.800</div></div>
+              <div class="mock-cat-book"><div class="mock-cat-cover" style="background:linear-gradient(135deg,#2a2824,#1a1814);"></div><div class="mock-cat-name">La sociedad del cansancio</div><div class="mock-cat-auth">Manantial</div><div class="mock-cat-price">$35.000</div></div>
+              <div class="mock-cat-book"><div class="mock-cat-cover" style="background:linear-gradient(135deg,#22282e,#14181e);"></div><div class="mock-cat-name">El hombre en busca</div><div class="mock-cat-auth">Manantial</div><div class="mock-cat-price">$32.000</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="screen-info">
+      <span class="screen-name">Catálogo</span>
+      <span class="screen-type">Desktop</span>
+    </div>
+  </div>
+
+  <!-- BOOK DETAIL DESKTOP -->
+  <div class="screen-item" onclick="openImageView('det-d')">
+    <div class="screen-frame">
+      <div class="screen-chrome">
+        <div class="chrome-dots"><div class="chrome-dot r"></div><div class="chrome-dot y"></div><div class="chrome-dot g"></div></div>
+        <div class="chrome-url">emanantial.com.ar/producto/la-sociedad-del-cansancio</div>
+      </div>
+      <div class="screen-preview">
+        <div style="width:100%;height:100%;background:#FDFAF5;overflow:hidden;display:flex;flex-direction:column;">
+          <div class="m-nav">
+            <span class="m-logo">Manantial</span>
+            <div class="m-nav-links"><span class="m-nav-link">Catálogo</span><span class="m-nav-link">Prensa</span><span class="m-nav-link">Nosotros</span></div>
+            <span class="m-nav-link">0 — $0</span>
+          </div>
+          <div class="mock-detail-hero">
+            <div class="mock-detail-cover" style="background:linear-gradient(135deg,#2a2420,#1a1510);display:flex;align-items:center;justify-content:center;">
+              <div style="text-align:center;padding:6px;">
+                <div style="font-size:4px;letter-spacing:0.15em;text-transform:uppercase;color:#C5A96B;margin-bottom:2px;">Byung-Chul Han</div>
+                <div style="font-family:var(--display);font-size:6px;color:#F5F1EA;line-height:1.2;">La sociedad del cansancio</div>
+              </div>
+            </div>
+            <div class="mock-detail-info">
+              <div class="mock-detail-cat">Filosofía</div>
+              <div class="mock-detail-title">La sociedad<br>del cansancio</div>
+              <div class="mock-detail-author">Byung-Chul Han</div>
+              <div class="mock-detail-divider"></div>
+              <div style="font-size:4px;color:#8A8078;letter-spacing:0.1em;text-transform:uppercase;">Editorial Manantial · 2024</div>
+              <div class="mock-detail-price">$35.000</div>
+              <div class="mock-detail-cta">Agregar al carrito</div>
+            </div>
+          </div>
+          <div class="mock-detail-desc">
+            <div class="mock-detail-desc-title">Sobre el libro</div>
+            <div class="mock-detail-desc-text">Byung-Chul Han detecta que en las últimas décadas se ha producido en nuestras sociedades occidentales avanzadas un cambio de paradigma y que la anterior sociedad disciplinaria ha pasado a ser una sociedad del rendimiento, en la que los individuos se afanan por explotarse a sí mismos. Si antiguamente el quebrantamiento de la norma acarreaba el castigo, ahora el incumplimiento del anhelo provoca frustración.</div>
+          </div>
+          <div class="mock-section-head" style="background:#F5F1EA;">
+            <span class="mock-section-title" style="font-size:7px;">Otros títulos del autor</span>
+            <span class="mock-section-rule"></span>
+          </div>
+          <div class="mock-books-row" style="background:#F5F1EA;">
+            <div class="mock-book-thumb"><div class="mock-book-img" style="background:linear-gradient(135deg,#1e2830,#141c24);"></div><div class="mock-book-ttitle">La expulsión de lo distinto</div></div>
+            <div class="mock-book-thumb"><div class="mock-book-img" style="background:linear-gradient(135deg,#28241e,#181412);"></div><div class="mock-book-ttitle">Psicopolítica</div></div>
+            <div class="mock-book-thumb"><div class="mock-book-img" style="background:linear-gradient(135deg,#2a2824,#1e1e18);"></div><div class="mock-book-ttitle">En el enjambre</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="screen-info">
+      <span class="screen-name">Detalle de libro</span>
+      <span class="screen-type">Desktop</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- MOBILE SCREENS -->
+<div class="section-label">
+  <span class="label-tag">Mobile</span>
+  <span class="label-title">Pantallas móviles</span>
+  <span class="label-rule"></span>
+  <span class="label-count">390px</span>
+</div>
+
+<div class="screens-mobile">
+
+  <!-- HOME MOBILE -->
+  <div class="mobile-item" onclick="openImageView('home-m')">
+    <div class="mobile-frame">
+      <div class="mobile-notch"></div>
+      <div class="mobile-preview">
+        <div style="width:100%;height:100%;background:#F5F1EA;overflow:hidden;display:flex;flex-direction:column;">
+          <div class="mm-nav">
+            <span class="mm-logo">Manantial</span>
+            <span class="mm-menu">☰</span>
+          </div>
+          <div class="mm-announce">Envío gratis en compras a partir de $55.000</div>
+          <div class="mm-hero">
+            <div class="mm-hero-cat">Filosofía</div>
+            <div class="mm-hero-title">La sociedad<br>del cansancio</div>
+            <div class="mm-hero-author">Byung-Chul Han</div>
+            <div class="mm-hero-book-img">
+              <div class="mm-hero-book-inner">
+                <div style="font-size:3.5px;letter-spacing:0.15em;text-transform:uppercase;color:#C5A96B;margin-bottom:2px;">Filosofía</div>
+                <div style="font-family:var(--display);font-size:5px;color:#F5F1EA;text-align:center;line-height:1.2;">La sociedad del cansancio</div>
+              </div>
+            </div>
+            <div class="mm-hero-cta">Ver más</div>
+          </div>
+          <div class="mm-section-head">
+            <span class="mm-section-title">Catálogo</span>
+            <span class="mm-section-rule"></span>
+            <span style="font-size:4px;letter-spacing:0.1em;text-transform:uppercase;color:#8A8078;">Ver todo →</span>
+          </div>
+          <div class="mm-books-scroll">
+            <div class="mm-book"><div class="mm-book-cover" style="background:linear-gradient(135deg,#d4c5a9,#b8a88a);"></div><div class="mm-book-title">El libro de las fobias</div><div class="mm-book-price">$28.300</div></div>
+            <div class="mm-book"><div class="mm-book-cover" style="background:linear-gradient(135deg,#b5c4d4,#8fa8bc);"></div><div class="mm-book-title">Entre Hipócrates</div><div class="mm-book-price">$51.000</div></div>
+            <div class="mm-book"><div class="mm-book-cover" style="background:linear-gradient(135deg,#2a2420,#1a1510);"></div><div class="mm-book-title">Estar con los muertos</div><div class="mm-book-price">$60.900</div></div>
+          </div>
+          <div class="mm-section-head" style="background:#1A1714;">
+            <span class="mm-section-title" style="color:#F5F1EA;">Autores</span>
+            <span class="mm-section-rule" style="background:rgba(255,255,255,0.1);"></span>
+          </div>
+          <div style="display:flex;gap:1px;background:#1A1714;padding:0 10px 8px;">
+            <div style="flex:1;aspect-ratio:1;background:linear-gradient(160deg,#2a2824,#1a1814);position:relative;overflow:hidden;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,23,20,0.85) 0%,transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:4px;">
+                <div style="font-size:3px;letter-spacing:0.15em;text-transform:uppercase;color:#C5A96B;">Filosofía</div>
+                <div style="font-family:var(--display);font-size:6px;color:#F5F1EA;">B.-C. Han</div>
+              </div>
+            </div>
+            <div style="flex:1;aspect-ratio:1;background:linear-gradient(160deg,#22282e,#14181e);position:relative;overflow:hidden;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,23,20,0.85) 0%,transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:4px;">
+                <div style="font-size:3px;letter-spacing:0.15em;text-transform:uppercase;color:#C5A96B;">Filosofía</div>
+                <div style="font-family:var(--display);font-size:6px;color:#F5F1EA;">V. Frankl</div>
+              </div>
+            </div>
+            <div style="flex:1;aspect-ratio:1;background:linear-gradient(160deg,#28241e,#181412);position:relative;overflow:hidden;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,23,20,0.85) 0%,transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:4px;">
+                <div style="font-size:3px;letter-spacing:0.15em;text-transform:uppercase;color:#C5A96B;">Psicología</div>
+                <div style="font-family:var(--display);font-size:5.5px;color:#F5F1EA;">D. Rabinovich</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-info">
+      <span class="mobile-name">Home</span>
+      <span class="mobile-tag">Mobile</span>
+    </div>
+  </div>
+
+  <!-- CATALOG MOBILE -->
+  <div class="mobile-item" onclick="openImageView('cat-m')">
+    <div class="mobile-frame">
+      <div class="mobile-notch"></div>
+      <div class="mobile-preview">
+        <div style="width:100%;height:100%;background:#FDFAF5;overflow:hidden;display:flex;flex-direction:column;">
+          <div class="mm-nav">
+            <span class="mm-logo">Manantial</span>
+            <span class="mm-menu">☰</span>
+          </div>
+          <div class="mm-cat-filters">
+            <span class="mm-cat-filter active">Todos</span>
+            <span class="mm-cat-filter">Filosofía</span>
+            <span class="mm-cat-filter">Psicología</span>
+            <span class="mm-cat-filter">Sociología</span>
+            <span class="mm-cat-filter">Ensayo</span>
+          </div>
+          <div style="padding:5px 10px;font-size:4.5px;color:#8A8078;background:#F5F1EA;letter-spacing:0.08em;">24 títulos encontrados</div>
+          <div class="mm-cat-grid">
+            <div><div class="mm-cat-item-cover" style="background:linear-gradient(135deg,#d4c5a9,#b8a88a);"></div><div class="mm-cat-item-name">El libro de las fobias</div><div class="mm-cat-item-price">$28.300</div></div>
+            <div><div class="mm-cat-item-cover" style="background:linear-gradient(135deg,#b5c4d4,#8fa8bc);"></div><div class="mm-cat-item-name">Entre Hipócrates y Sócrates</div><div class="mm-cat-item-price">$51.000</div></div>
+            <div><div class="mm-cat-item-cover" style="background:linear-gradient(135deg,#2a2420,#1a1510);"></div><div class="mm-cat-item-name">Estar con los muertos</div><div class="mm-cat-item-price">$60.900</div></div>
+            <div><div class="mm-cat-item-cover" style="background:linear-gradient(135deg,#c4b5a8,#a89080);"></div><div class="mm-cat-item-name">Frantz Fanon</div><div class="mm-cat-item-price">$28.300</div></div>
+            <div><div class="mm-cat-item-cover" style="background:linear-gradient(135deg,#1e2830,#141c24);"></div><div class="mm-cat-item-name">El gesto de Caín</div><div class="mm-cat-item-price">$28.300</div></div>
+            <div><div class="mm-cat-item-cover" style="background:linear-gradient(135deg,#a0b4c0,#7890a0);"></div><div class="mm-cat-item-name">Las almas heridas</div><div class="mm-cat-item-price">$36.200</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-info">
+      <span class="mobile-name">Catálogo</span>
+      <span class="mobile-tag">Mobile</span>
+    </div>
+  </div>
+
+  <!-- DETAIL MOBILE -->
+  <div class="mobile-item" onclick="openImageView('det-m')">
+    <div class="mobile-frame">
+      <div class="mobile-notch"></div>
+      <div class="mobile-preview">
+        <div style="width:100%;height:100%;background:#FDFAF5;overflow:hidden;display:flex;flex-direction:column;">
+          <div class="mm-nav">
+            <span class="mm-logo">Manantial</span>
+            <span class="mm-menu">☰</span>
+          </div>
+          <div class="mm-det-cover" style="background:linear-gradient(135deg,#2a2420,#1a1510);display:flex;align-items:center;justify-content:center;">
+            <div style="text-align:center;padding:10px;">
+              <div style="font-size:5px;letter-spacing:0.15em;text-transform:uppercase;color:#C5A96B;margin-bottom:4px;">Byung-Chul Han</div>
+              <div style="font-family:var(--display);font-size:9px;color:#F5F1EA;line-height:1.2;">La sociedad<br>del cansancio</div>
+              <div style="width:30px;height:0.5px;background:rgba(197,169,107,0.4);margin:6px auto;"></div>
+              <div style="font-size:5px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(197,169,107,0.6);">Manantial · 2024</div>
+            </div>
+          </div>
+          <div class="mm-det-info">
+            <div class="mm-det-cat">Filosofía</div>
+            <div class="mm-det-title">La sociedad<br>del cansancio</div>
+            <div class="mm-det-author">Byung-Chul Han</div>
+            <div class="mm-det-divider"></div>
+            <div class="mm-det-price">$35.000</div>
+            <div class="mm-det-cta">Agregar al carrito</div>
+            <div class="mm-det-desc">Byung-Chul Han detecta que en las últimas décadas se ha producido en nuestras sociedades occidentales avanzadas un cambio de paradigma y que la anterior sociedad disciplinaria ha pasado a ser una sociedad del rendimiento, en la que los individuos se afanan por explotarse a sí mismos.</div>
+          </div>
+          <div class="mm-section-head" style="background:#F5F1EA;">
+            <span class="mm-section-title" style="font-size:8px;">Otros títulos</span>
+            <span class="mm-section-rule"></span>
+          </div>
+          <div class="mm-books-scroll">
+            <div class="mm-book"><div class="mm-book-cover" style="background:linear-gradient(135deg,#1e2830,#141c24);"></div><div class="mm-book-title">La expulsión de lo distinto</div></div>
+            <div class="mm-book"><div class="mm-book-cover" style="background:linear-gradient(135deg,#28241e,#181412);"></div><div class="mm-book-title">Psicopolítica</div></div>
+            <div class="mm-book"><div class="mm-book-cover" style="background:linear-gradient(135deg,#2a2824,#1e1e18);"></div><div class="mm-book-title">En el enjambre</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-info">
+      <span class="mobile-name">Detalle de libro</span>
+      <span class="mobile-tag">Mobile</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="page-footer">
+  Ediciones Manantial · Rediseño Web 2026 · Presentación de Proyecto
+</div>
+
+<!-- FLOATING NAV -->
+<div class="fab-wrap">
+  <div class="fab-panel" id="fabPanel">
+    <div class="fab-section-title">Desktop</div>
+    <div class="fab-links">
+      <button class="fab-link active" onclick="scrollTo('home-d-anchor')">
+        <div class="fab-link-icon">🖥</div>
+        Home
+      </button>
+      <button class="fab-link" onclick="scrollTo('cat-d-anchor')">
+        <div class="fab-link-icon">📚</div>
+        Catálogo
+      </button>
+      <button class="fab-link" onclick="scrollTo('det-d-anchor')">
+        <div class="fab-link-icon">📖</div>
+        Detalle libro
+      </button>
+    </div>
+    <div class="fab-section-title">Mobile</div>
+    <div class="fab-links">
+      <button class="fab-link" onclick="scrollTo('home-m-anchor')">
+        <div class="fab-link-icon">📱</div>
+        Home
+      </button>
+      <button class="fab-link" onclick="scrollTo('cat-m-anchor')">
+        <div class="fab-link-icon">📱</div>
+        Catálogo
+      </button>
+      <button class="fab-link" onclick="scrollTo('det-m-anchor')">
+        <div class="fab-link-icon">📱</div>
+        Detalle libro
+      </button>
+    </div>
+    <div class="fab-divider"></div>
+    <div style="padding-top:12px;">
+      <button class="fab-link" onclick="window.open('manantial_landing_redesign.html','_blank')">
+        <div class="fab-link-icon">↗</div>
+        Abrir diseño completo
+      </button>
+    </div>
+  </div>
+  <button class="fab-btn" id="fabBtn" onclick="toggleFab()">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="5" cy="10" r="2" fill="#1A1714"/>
+      <circle cx="10" cy="10" r="2" fill="#1A1714"/>
+      <circle cx="15" cy="10" r="2" fill="#1A1714"/>
+    </svg>
+  </button>
+</div>
+
+<script>
+  // FAB
+  let fabOpen = false;
+  function toggleFab() {
+    fabOpen = !fabOpen;
+    document.getElementById('fabPanel').classList.toggle('open', fabOpen);
+    document.getElementById('fabBtn').classList.toggle('open', fabOpen);
+  }
+  document.addEventListener('click', (e) => {
+    const wrap = document.querySelector('.fab-wrap');
+    if (fabOpen && !wrap.contains(e.target)) { fabOpen = false; document.getElementById('fabPanel').classList.remove('open'); document.getElementById('fabBtn').classList.remove('open'); }
+  });
+
+  // Update active fab link on scroll
+  const sections = ['desktop', 'mobile'];
+
+  // IMAGE VIEW — opens each mock like a real image URL in a new tab.
+  // Replace imageUrl later with the final uploaded image for each screen.
+  const screens = {
+    'home-d': { label: 'Home — Desktop', bg: '#F5F1EA', imageUrl: '' },
+    'cat-d':  { label: 'Catálogo — Desktop', bg: '#F5F1EA', imageUrl: '' },
+    'det-d':  { label: 'Detalle Libro — Desktop', bg: '#FDFAF5', imageUrl: '' },
+    'home-m': { label: 'Home — Mobile', bg: '#F5F1EA', imageUrl: '' },
+    'cat-m':  { label: 'Catálogo — Mobile', bg: '#FDFAF5', imageUrl: '' },
+    'det-m':  { label: 'Detalle Libro — Mobile', bg: '#FDFAF5', imageUrl: '' },
+  };
+
+  function openImageView(id) {
+    const info = screens[id];
+    if (!info) return;
+
+    if (info.imageUrl) {
+      window.open(info.imageUrl, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
+    const win = window.open('', '_blank', 'noopener,noreferrer');
+    if (!win) return;
+
+    win.document.write(`<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>${info.label}</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: ${info.bg};
+    }
+    body {
+      display: grid;
+      place-items: center;
+      font-family: Arial, sans-serif;
+    }
+    .placeholder {
+      color: rgba(0,0,0,0.28);
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="placeholder">${info.label}<br><br>Replace <code>imageUrl</code> later</div>
+</body>
+</html>`);
+    win.document.close();
+  }
+</script>
+</body>
+</html>
