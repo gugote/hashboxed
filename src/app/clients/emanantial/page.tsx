@@ -2,14 +2,18 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-type ScreenId = "home-d" | "cat-d" | "det-d" | "home-m" | "cat-m" | "det-m";
+type ScreenId = "home-d" | "cat-d" | "det-d" | "nos-d" | "con-d" | "home-m" | "cat-m" | "det-m" | "nos-m" | "con-m";
 type AnchorId =
   | "home-d-anchor"
   | "cat-d-anchor"
   | "det-d-anchor"
+  | "nos-d-anchor"
+  | "con-d-anchor"
   | "home-m-anchor"
   | "cat-m-anchor"
-  | "det-m-anchor";
+  | "det-m-anchor"
+  | "nos-m-anchor"
+  | "con-m-anchor";
 
 type ScreenMeta = {
   label: string;
@@ -62,6 +66,34 @@ const SCREEN_META: Record<ScreenId, ScreenMeta> = {
     width: 390,
     height: 3396,
   },
+  "nos-d": {
+    label: "Nosotros — Desktop",
+    bg: "#F5F1EA",
+    src: "/clients/emanantial/desktop-nosotros.png",
+    width: 1440,
+    height: 3000,
+  },
+  "con-d": {
+    label: "Contacto — Desktop",
+    bg: "#FDFAF5",
+    src: "/clients/emanantial/desktop-contacto.png",
+    width: 1440,
+    height: 2800,
+  },
+  "nos-m": {
+    label: "Nosotros — Mobile",
+    bg: "#F5F1EA",
+    src: "/clients/emanantial/mobile-nosotros.png",
+    width: 390,
+    height: 3500,
+  },
+  "con-m": {
+    label: "Contacto — Mobile",
+    bg: "#FDFAF5",
+    src: "/clients/emanantial/mobile-contacto.png",
+    width: 390,
+    height: 3200,
+  },
 };
 
 interface DesktopScreenConfig {
@@ -101,6 +133,20 @@ const desktopScreens: DesktopScreenConfig[] = [
     chromeUrl: "emanantial.com.ar/producto/la-sociedad-del-cansancio",
     typeLabel: "Desktop",
   },
+  {
+    id: "nos-d",
+    anchor: "nos-d-anchor",
+    name: "Nosotros",
+    chromeUrl: "emanantial.com.ar/nosotros",
+    typeLabel: "Desktop",
+  },
+  {
+    id: "con-d",
+    anchor: "con-d-anchor",
+    name: "Contacto",
+    chromeUrl: "emanantial.com.ar/contacto",
+    typeLabel: "Desktop",
+  },
 ];
 
 const mobileScreens: MobileScreenConfig[] = [
@@ -122,18 +168,34 @@ const mobileScreens: MobileScreenConfig[] = [
     name: "Detalle de libro",
     tagLabel: "Mobile",
   },
+  {
+    id: "nos-m",
+    anchor: "nos-m-anchor",
+    name: "Nosotros",
+    tagLabel: "Mobile",
+  },
+  {
+    id: "con-m",
+    anchor: "con-m-anchor",
+    name: "Contacto",
+    tagLabel: "Mobile",
+  },
 ];
 
 const desktopFabLinks = [
   { anchor: "home-d-anchor" as AnchorId, icon: "🖥", label: "Home" },
   { anchor: "cat-d-anchor" as AnchorId, icon: "📚", label: "Catálogo" },
   { anchor: "det-d-anchor" as AnchorId, icon: "📖", label: "Detalle libro" },
+  { anchor: "nos-d-anchor" as AnchorId, icon: "👥", label: "Nosotros" },
+  { anchor: "con-d-anchor" as AnchorId, icon: "📧", label: "Contacto" },
 ];
 
 const mobileFabLinks = [
   { anchor: "home-m-anchor" as AnchorId, icon: "📱", label: "Home" },
   { anchor: "cat-m-anchor" as AnchorId, icon: "📱", label: "Catálogo" },
   { anchor: "det-m-anchor" as AnchorId, icon: "📱", label: "Detalle libro" },
+  { anchor: "nos-m-anchor" as AnchorId, icon: "📱", label: "Nosotros" },
+  { anchor: "con-m-anchor" as AnchorId, icon: "📱", label: "Contacto" },
 ];
 
 export default function EManantialPage() {
@@ -191,7 +253,7 @@ export default function EManantialPage() {
           Diseño <em>Web</em> Manantial
         </h1>
         <p className="intro-sub">
-          Rediseño completo del sitio editorial. 6 pantallas — Desktop &amp; Mobile.
+          Rediseño completo del sitio editorial. 8 pantallas — Desktop &amp; Mobile.
         </p>
       </section>
 
