@@ -1,6 +1,7 @@
 'use client';
 
 import Header from "@/app/components/Header"
+import Footer from "@/app/components/Footer"
 import Image from "next/image"
 import { Link as LinkIcon } from "lucide-react"
 import { Skeleton } from "@/components/ui/skeleton"
@@ -431,6 +432,7 @@ export default function Alphacast(){
             className="h-[500px] w-[500px] absolute bottom-[-200px] right-10 opacity-45 rotate-[15deg]"
           />
         </section>
+        <div className="container mx-auto"><Footer /></div>
       </div>
     </>    
   )

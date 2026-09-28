@@ -1,15 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ 
-  subsets: ["latin"],
-  display: 'swap',
-  preload: true,
-  fallback: ['system-ui', 'arial'],
-});
 
 export const metadata: Metadata = {
   title: "Hashboxed.com :: UI/UX Design - Frontend Development",
@@ -23,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} text-copy`}>
+      <body className="text-copy antialiased">
         {children}
         <Analytics />
         <SpeedInsights />

@@ -3,14 +3,13 @@ import { useState } from 'react';
 import { ProjectsData, ProjectsDataTypes } from '../../../data/ProjectsData';
 import Image from 'next/image';
 import Link from 'next/link';
-import { p } from 'motion/react-client';
 
 interface ProjectCardsProps {
   layoutClass?: string
 }
 
 const caseStudyLink = (title: string) => {
-  const caseURL = '/works/' + title;
+  const caseURL = '/work/' + title;
   return caseURL;
 }
 

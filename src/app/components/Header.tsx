@@ -4,7 +4,6 @@ import Navigation from "./Navigation";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import { h1 } from "motion/react-client";
 interface HeaderProps {
   layoutClass?: string;
   caseStudy?: {
@@ -14,10 +13,9 @@ interface HeaderProps {
 }
 
 export default function Header({ layoutClass, caseStudy }: HeaderProps){
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(true);
 
   useEffect(()=>{
-    setIsHovered(true);
     const timer = setTimeout(()=>{
       setIsHovered(false);
     }, 1000);

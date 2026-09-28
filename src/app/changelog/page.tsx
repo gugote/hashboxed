@@ -1,4 +1,5 @@
 import Header from "../components/Header"
+import Footer from "../components/Footer"
 import ChangeLogCards from "./ChangeLogCards"
 
 export default function Changelog(){
@@ -7,6 +8,7 @@ export default function Changelog(){
       <Header layoutClass="pt-5 mb-5"/>
       <h1 className="text-[50px] font-extrabold tracking-tighter">Changelog</h1>
       <ChangeLogCards layoutClass="my-6"/>
+      <Footer />
     </div>
   )
 }

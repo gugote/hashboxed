@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 type ScreenId = "home-d" | "cat-d" | "det-d" | "nos-d" | "con-d" | "home-m" | "cat-m" | "det-m" | "nos-m" | "con-m";
 type AnchorId =
@@ -243,9 +244,9 @@ export default function EManantialPage() {
     <div className="emanantial-page">
       <header className="site-header">
         <div className="header-logo">Ediciones Manantial</div>
-        <a className="header-meta" href="/" aria-label="Hashboxed home">
+        <Link className="header-meta" href="/" aria-label="Hashboxed home">
           Hashboxed - 2026
-        </a>
+        </Link>
       </header>
 
       <section className="intro">
