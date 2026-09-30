@@ -50,14 +50,14 @@ export default function ProjectCards({ layoutClass }: ProjectCardsProps) {
     <div className={layoutClass}>
       {ProjectsData.map((project: ProjectsDataTypes) => (
         project.active && (
-          <div key={project.title} className="project-card flex flex-col lg:flex-row justify-between bg-white p-7 rounded-xl shadow-2xl mb-20 gap-8">
+          <div key={project.title} className="project-card mb-10 flex flex-col justify-between gap-6 rounded-xl bg-white p-5 shadow-xl sm:p-7 lg:mb-20 lg:flex-row lg:gap-8 lg:shadow-2xl">
             <div className="w-full lg:w-1/3 lg:sticky top-5 self-start mb-2 lg:mb-8">
-              <h2 className="text-4xl font-extrabold tracking-tighter mb-1">
+              <h2 className="mb-1 text-3xl font-extrabold tracking-tighter sm:text-4xl">
                 {project.title}
               </h2>
               <h3 className="text-xl font-semibold tracking-tighter mb-2">{project.task}</h3>
               { project.hasCS && project.CSLink && (
-                <p className="my-5 transition-all duration-300 inline-block hover:rotate-[-1deg] hover:scale-150"><Link 
+                <p className="my-5 inline-block transition-transform duration-150 lg:hover:-rotate-1 lg:hover:scale-105"><Link
                 href={{pathname: caseStudyLink(project.CSLink)}}
                 className="bg-black text-white font-bold py-2 px-4 rounded-lg hover:shadow-lg">
                 View Case Study
@@ -102,7 +102,7 @@ export default function ProjectCards({ layoutClass }: ProjectCardsProps) {
                         onClick={()=> openModal(image, project.images!, index)}
                       />
                       {image.description && (
-                        <p className="px-14 py-4 text-center text-xs text-gray-600 bg-gray-100 border-t border-t-white">{image.description}</p>
+                        <p className="border-t border-t-white bg-gray-100 px-4 py-3 text-center text-xs text-gray-600 sm:px-8 sm:py-4 lg:px-14">{image.description}</p>
                       )}
                     </div>
                   ))}

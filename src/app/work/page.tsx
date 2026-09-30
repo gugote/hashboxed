@@ -7,14 +7,13 @@ export default function Works() {
     <>
       <div className="stripes bg-works-bg-stripes w-full h-[170px] bg-cover absolute bottom-[-100px] z-10 hidden lg:inline"></div>
       <div className="works relative w-full bg-zinc-200">
-        <div className="background h-dvh bg-works-bg-02 bg-cover bg-bottom">
+        <div className="background min-h-dvh bg-works-bg-02 bg-[length:auto_100dvh] bg-top bg-no-repeat lg:h-dvh lg:min-h-0 lg:bg-cover lg:bg-bottom">
           <Header layoutClass="container pt-10 w-[calc(100%-40px)] max-w-[1000px] mx-auto"/>
           <div className="container w-[calc(100%-40px)] max-w-[1000px] mx-auto relative">
-            <p className="my-5 text-sm text-white bg-red-400 rounded-lg p-3 lg:hidden">While I believe in a mobile-first world, I also believe that the work I do is best appreciated on a big screen for portfolio purposes, so it may not render perfectly here.</p>
-            <h1 className="text-[100px] font-extrabold tracking-tighter text-copy mt-[200px] drop-shadow-2xl">Work</h1>
-            <p className="mb-[50px] w-full lg:w-1/2 text-[20px] text-copy font-extrabold tracking-tighter drop-shadow-xl">Specializing in MVPs and smart design consulting for startups, I can design smart, modern, and scalable user interfaces. I focus on delivering creative solutions that work efficiently and look great.</p>
+            <h1 className="mt-24 text-[clamp(4rem,22vw,6.25rem)] font-extrabold tracking-tighter text-copy drop-shadow-2xl lg:mt-[200px]">Work</h1>
+            <p className="mb-10 w-full text-lg font-extrabold tracking-tighter text-copy drop-shadow-xl lg:mb-[50px] lg:w-1/2 lg:text-[20px]">Specializing in MVPs and smart design consulting for startups, I can design smart, modern, and scalable user interfaces. I focus on delivering creative solutions that work efficiently and look great.</p>
             <ProjectCards layoutClass="z-30 relative"/>
-            <div className="px-5 pb-8"><Footer /></div>
+            <div className="pb-8 sm:px-5"><Footer /></div>
           </div>
           
         </div>

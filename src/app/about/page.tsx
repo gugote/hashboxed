@@ -20,7 +20,7 @@ export default function About() {
               </div>
               <div className="mt-16"><LatestUpdate /></div>
             </div>
-            <figure className="h-[240px] w-full max-w-[240px] justify-self-end overflow-hidden rounded-[1.5rem] bg-[#fafafa]">
+            <figure className="hidden h-[240px] w-full max-w-[240px] justify-self-end overflow-hidden rounded-[1.5rem] bg-[#fafafa] md:block">
               <Image
                 src={Gugo}
                 alt="Credits to Ale Vizio prompting skills"

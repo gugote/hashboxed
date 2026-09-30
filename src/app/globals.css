@@ -60,6 +60,11 @@ body {
 @media (max-width: 767px) {
   .hero-cursor { display: none; }
   .hero-selection { display: none; }
+  .hero-title {
+    animation: none;
+    letter-spacing: -0.035em;
+    transform: rotate(0deg);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

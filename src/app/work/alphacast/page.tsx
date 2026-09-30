@@ -105,21 +105,20 @@ export default function Alphacast(){
   }, []);
   return(
     <>
-      <div className="case-study-body w-full">
-        <Header layoutClass="pt-10 w-[calc(100%-40px)] max-w-[1280px] mx-auto mb-5 flex flex-row justify-between items-center" caseStudy={caseStudy}/>
-        <p className="container my-30 text-sm text-white bg-red-300 rounded-lg p-3 lg:hidden">While I believe in a mobile-first world, I also believe that the work I do is best appreciated on a big screen for portfolio purposes, so it may not render perfectly here.</p>
+      <div className="case-study-body w-full overflow-x-hidden">
+        <Header layoutClass="pt-10 w-[calc(100%-40px)] max-w-[1280px] mx-auto mb-5 flex flex-col items-start gap-5 sm:flex-row sm:justify-between sm:items-center" caseStudy={caseStudy}/>
         <section className="container mx-auto">
-          <h1 className="font-black tracking-tighter text-5xl leading-tight my-20">How We Cut Customer Questions by Over 80% and Improved Navigation & Overall Experience by Redesigning Alphacast&apos;s Main Page.</h1>
+          <h1 className="my-16 text-[clamp(2.75rem,13vw,3.75rem)] font-black leading-[1.03] tracking-tighter sm:my-20 sm:text-5xl sm:leading-tight">How We Cut Customer Questions by Over 80% and Improved Navigation & Overall Experience by Redesigning Alphacast&apos;s Main Page.</h1>
         </section>
-        <section className="container flex flex-row justify-between mb-10 mx-auto">
-          <div className="w-[calc(60%-20px)]">
+        <section className="container mx-auto mb-10 flex flex-col gap-10 md:flex-row md:justify-between">
+          <div className="w-full md:w-[calc(60%-20px)]">
             <h2 className="text-4xl font-black tracking-tight mb-5">The Client</h2>
             <p className="mb-20">In this case study, we explore <strong style={{ color: alphacast.color }}>Alphacast</strong>, a rapidly growing startup revolutionizing the way Economic & Financial data is used. The platform focuses on providing ready-to-use data for integration into models, dashboards, and reports.</p>
             <h2 className="text-4xl font-black tracking-tight mb-5">The Problem</h2>
             <p className="mb-2">As a fast-paced, highly technical startup, <strong style={{ color: alphacast.color }}>Alphacast</strong> did not have a dedicated design team. The development team had been quickly shipping features and tools, but without a clear design direction.</p>
             <p className="mb-20">After heavy client usage, they discovered that content creators struggled to understand where their projects were saved. Additionally, users working in teams had to click at least four times to reach their team content, making the experience inefficient and time-consuming.</p>
           </div>
-          <div className="w-[calc(35%-20px)]">
+          <div className="w-full md:w-[calc(35%-20px)]">
             <div className="card">
               <Image
                 src="/projects/alphacast/alphacast.svg"
@@ -143,10 +142,10 @@ export default function Alphacast(){
         </section>
         <section className="container mx-auto mb-20">
           <h2 className="text-4xl font-black tracking-tight mb-10">UI Problems Before the Redesign</h2>
-          <div className="w-full flex flex-row justify-between gap-5 mx-auto mb-20">
-            <div className="relative h-fit w-[250px]">
+          <div className="mx-auto mb-20 flex w-full flex-wrap gap-5 lg:justify-between">
+            <div className="relative h-fit w-full sm:w-[calc(50%-10px)] lg:w-[250px]">
               {!imageLoadedStates['01'] && (
-                <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
+                <Skeleton className="absolute inset-0 h-[200px] w-full bg-slate-100 rounded" />
               )}
               <div>
                 <Image
@@ -154,7 +153,7 @@ export default function Alphacast(){
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
-                  className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
+                  className={`h-auto aspect-[5/4] w-full object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
                     imageLoadedStates['01'] ? "opacity-100" : "opacity-0"
                   }`}
                   onLoad={() => setImageLoaded('01')}
@@ -162,9 +161,9 @@ export default function Alphacast(){
                 <p className="text-xs mt-3 text-left px-1">No visual distinction between the header, sidebar, and content area.</p>
               </div>
             </div>
-            <div className="relative h-fit w-[250px]">
+            <div className="relative h-fit w-full sm:w-[calc(50%-10px)] lg:w-[250px]">
               {!imageLoadedStates['02'] && (
-                <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
+                <Skeleton className="absolute inset-0 h-[200px] w-full bg-slate-100 rounded" />
               )}
               <div>
                 <Image
@@ -172,7 +171,7 @@ export default function Alphacast(){
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
-                  className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
+                  className={`h-auto aspect-[5/4] w-full object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
                     imageLoadedStates['02'] ? "opacity-100" : "opacity-0"
                   }`}
                   onLoad={() => setImageLoaded('02')}
@@ -180,9 +179,9 @@ export default function Alphacast(){
                 <p className="text-xs mt-3 text-left px-1">No hierarchy between elements; everything looked the same.</p>
               </div>
             </div>
-            <div className="relative h-fit w-[250px]">
+            <div className="relative h-fit w-full sm:w-[calc(50%-10px)] lg:w-[250px]">
               {!imageLoadedStates['03'] && (
-                <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
+                <Skeleton className="absolute inset-0 h-[200px] w-full bg-slate-100 rounded" />
               )}
               <div>
                 <Image
@@ -190,7 +189,7 @@ export default function Alphacast(){
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
-                  className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
+                  className={`h-auto aspect-[5/4] w-full object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
                     imageLoadedStates['03'] ? "opacity-100" : "opacity-0"
                   }`}
                   onLoad={() => setImageLoaded('03')}
@@ -198,9 +197,9 @@ export default function Alphacast(){
                 <p className="text-xs mt-3 text-left px-1">No visual cues for identifying owned vs shared repositories.</p>
               </div>
             </div>
-            <div className="relative h-fit w-[250px]">
+            <div className="relative h-fit w-full sm:w-[calc(50%-10px)] lg:w-[250px]">
               {!imageLoadedStates['04'] && (
-                <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
+                <Skeleton className="absolute inset-0 h-[200px] w-full bg-slate-100 rounded" />
               )}
               <div>
                 <Image
@@ -208,7 +207,7 @@ export default function Alphacast(){
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
-                  className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
+                  className={`h-auto aspect-[5/4] w-full object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
                     imageLoadedStates['04'] ? "opacity-100" : "opacity-0"
                   }`}
                   onLoad={() => setImageLoaded('04')}
@@ -232,7 +231,7 @@ export default function Alphacast(){
             >
               <div className="mb-20">
                 {!imageLoadedStates['05'] && (
-                  <Skeleton className="absolute inset-0 h-[200px] w-[1280px] bg-slate-100 rounded" />
+                  <Skeleton className="absolute inset-0 h-[200px] w-full bg-slate-100 rounded" />
                 )}
                 <Image
                   src="/projects/alphacast/alphacast-cs-05.png"
@@ -272,22 +271,22 @@ export default function Alphacast(){
               ))} 
             </div>
           </div>
-          <div className="mb-20 flex flex-row flex-wrap justify-between gap-5">
-            <div className="w-[calc(50%-40px)] mb-5">
+          <div className="mb-20 flex flex-col gap-5 md:flex-row md:flex-wrap md:justify-between">
+            <div className="mb-5 w-full md:w-[calc(50%-40px)]">
               <h4 className="font-bold text-xl mb-2">1. Rename “Home” to “Dashboard”</h4>
               <p className="mb-2">Users now land on a dashboard where they can instantly see the latest projects they’ve worked on and what’s been shared with them.</p>
               <p className="mb-2">This change created a more natural and intuitive entry point—something users immediately understood as a hub for their work.</p>
             </div>
-            <div className="w-[calc(50%-40px)] mb-5">
+            <div className="mb-5 w-full md:w-[calc(50%-40px)]">
               <h4 className="font-bold text-xl mb-2">2. Sidebar Improvements</h4>
               <p className="mb-2">We restructured the sidebar, simplifying navigation and saving two clicks each time a user accessed a repository. We also limited the number of repositories shown (since most users only have 2–3), and added a “View All” link to access the complete list.</p>
             </div>
-            <div className="w-[calc(50%-40px)] mb-5">
+            <div className="mb-5 w-full md:w-[calc(50%-40px)]">
               <h4 className="font-bold text-xl mb-2">3. Context, Content & Title Weight</h4>
               <p className="mb-2">We made small visual tweaks to better separate context from content in both the sidebar and the header. We also refined typography for improved readability.</p>
               <p className="mb-2">Main content cards were redesigned for consistent sizing and formatting, making them easier to scan and understand.</p>
             </div>
-            <div className="w-[calc(50%-40px)] mb-5">
+            <div className="mb-5 w-full md:w-[calc(50%-40px)]">
               <h4 className="font-bold text-xl mb-2">4. Improved Team Page Access</h4>
               <p className="mb-2">We merged the “Team Info” and “Team Homepage” into a single view and placed direct links in the sidebar. Now, each repository clearly shows the owning team, along with a link to access the team files.</p>
             </div>
@@ -295,10 +294,10 @@ export default function Alphacast(){
         </section>
         <section className="container mx-auto mb-20">
           <h2 className="text-4xl font-black tracking-tight mb-10">More UI Refinements</h2>
-          <div className="w-full flex flex-row justify-between gap-5 mx-auto mb-20">
-            <div className="relative h-fit w-[250px]">
+          <div className="mx-auto mb-20 flex w-full flex-wrap gap-5 lg:justify-between">
+            <div className="relative h-fit w-full sm:w-[calc(50%-10px)] lg:w-[250px]">
               {!imageLoadedStates['06'] && (
-                <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
+                <Skeleton className="absolute inset-0 h-[200px] w-full bg-slate-100 rounded" />
               )}
               <div>
                 <Image
@@ -306,7 +305,7 @@ export default function Alphacast(){
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
-                  className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
+                  className={`h-auto aspect-[5/4] w-full object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
                     imageLoadedStates['06'] ? "opacity-100" : "opacity-0"
                   }`}
                   onLoad={() => setImageLoaded('06')}
@@ -314,9 +313,9 @@ export default function Alphacast(){
                 <p className="text-xs mt-3 text-left px-1">Enhanced asset card design for consistency, clarity, and better interaction.</p>
               </div>
             </div>
-            <div className="relative h-fit w-[250px]">
+            <div className="relative h-fit w-full sm:w-[calc(50%-10px)] lg:w-[250px]">
               {!imageLoadedStates['07'] && (
-                <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
+                <Skeleton className="absolute inset-0 h-[200px] w-full bg-slate-100 rounded" />
               )}
               <div>
                 <Image
@@ -324,7 +323,7 @@ export default function Alphacast(){
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
-                  className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
+                  className={`h-auto aspect-[5/4] w-full object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
                     imageLoadedStates['07'] ? "opacity-100" : "opacity-0"
                   }`}
                   onLoad={() => setImageLoaded('07')}
@@ -332,9 +331,9 @@ export default function Alphacast(){
                 <p className="text-xs mt-3 text-left px-1">Moved internal tab navigation to a more contextual top-level position.</p>
               </div>
             </div>
-            <div className="relative h-fit w-[250px]">
+            <div className="relative h-fit w-full sm:w-[calc(50%-10px)] lg:w-[250px]">
               {!imageLoadedStates['08'] && (
-                <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
+                <Skeleton className="absolute inset-0 h-[200px] w-full bg-slate-100 rounded" />
               )}
               <div>
                 <Image
@@ -342,7 +341,7 @@ export default function Alphacast(){
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
-                  className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
+                  className={`h-auto aspect-[5/4] w-full object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
                     imageLoadedStates['08'] ? "opacity-100" : "opacity-0"
                   }`}
                   onLoad={() => setImageLoaded('08')}
@@ -350,9 +349,9 @@ export default function Alphacast(){
                 <p className="text-xs mt-3 text-left px-1">On team pages, added clearer visual cues to identify team-owned repositories, including a “Follow” button and icons to indicate access level.</p>
               </div>
             </div>
-            <div className="relative h-fit w-[250px]">
+            <div className="relative h-fit w-full sm:w-[calc(50%-10px)] lg:w-[250px]">
               {!imageLoadedStates['09'] && (
-                <Skeleton className="absolute inset-0 h-[200px] w-[250px] bg-slate-100 rounded" />
+                <Skeleton className="absolute inset-0 h-[200px] w-full bg-slate-100 rounded" />
               )}
               <div>
                 <Image
@@ -360,7 +359,7 @@ export default function Alphacast(){
                   alt="Alphacast Case Study Screenshot"
                   width={250}
                   height={200}
-                  className={`h-[200px] w-[250px] object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
+                  className={`h-auto aspect-[5/4] w-full object-cover bg-slate-100 rounded border shadow-sm transition-all duration-300 hover:scale-[1.02] transform-gpu will-change-transform ${
                     imageLoadedStates['09'] ? "opacity-100" : "opacity-0"
                   }`}
                   onLoad={() => setImageLoaded('09')}
@@ -371,20 +370,20 @@ export default function Alphacast(){
           </div>
         </section>
         
-        <section className="container mx-auto mb-20 flex flex-row justify-between gap-5">
-          <div className="w-[calc(50%-20px)]">
+        <section className="container mx-auto mb-20 flex flex-col gap-10 md:flex-row md:justify-between">
+          <div className="w-full md:w-[calc(50%-20px)]">
             <h2 className="text-4xl font-black tracking-tight mb-5">The Results</h2>
             <p className="mb-5">Within one month of deployment, we saw measurable improvements in both user satisfaction and operational efficiency:</p>
             <p className="mb-5">83% reduction in support questions related to file and project location.</p>
             <p className="mb-5">22% reduction in questions about accessing team pages.</p>
             <p className="mb-5">Additionally, the Client Onboarding team reported a smoother, faster onboarding flow, making it easier to present the platform’s structure and features clearly. These improvements led to stronger daily workflows and helped increase platform adoption and trust.</p>
           </div>
-          <div className="w-[calc(40%-20px)]">
+          <div className="w-full md:w-[calc(40%-20px)]">
             <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 text-center relative overflow-hidden shadow-sm mb-5 group transition-all duration-300">
               <div className="absolute top-0 right-0 w-32 h-32 bg-purple-100 rounded-full -translate-y-16 translate-x-16 opacity-50 group-hover:scale-125 group-hover:opacity-80 transition-transform duration-300"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-100 rounded-full translate-y-12 -translate-x-12 opacity-50  group-hover:scale-125 group-hover:opacity-80 transition-transform duration-300"></div>
               <div className="flex flex-row items-center justify-between text-left w-[100%] mx-auto">
-                <div className="w-1/2 text-6xl text-right pr-5 font-bold tracking-tighter" style={{ color: alphacast.color }}>-83%</div>
+                <div className="w-1/2 pr-5 text-right text-4xl font-bold tracking-tighter sm:text-6xl" style={{ color: alphacast.color }}>-83%</div>
                 <div className="w-1/2 font-semibold ">questions about navigation or app usage</div>
               </div>
             </div>
