@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="flowbot" class="hero-grid" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <style>:target #hero-grid-lines path{stroke:#358ac4}:target .hero-grid-cells,:target .hero-grid-dots{fill:#358ac4}.hero-grid-cells rect{opacity:.035;animation:12s ease-in-out infinite pulse}.hero-grid-cells rect:nth-child(2n){animation-delay:-5s}.hero-grid-cells rect:nth-child(3n){animation-delay:-9s}.grid-dot{opacity:.7;offset-rotate:0deg;animation:24s linear infinite travel}.grid-dot-a{offset-path:path("M160 160 H560 V400 H1120");animation-delay:-7s}.grid-dot-b{offset-path:path("M1200 240 H880 V560 H400");animation-duration:30s;animation-delay:-17s}.grid-dot-c{offset-path:path("M400 640 V320 H1040 V80");animation-duration:28s;animation-delay:-12s}.grid-dot-d{offset-path:path("M1280 480 H720 V160 H240");animation-duration:32s;animation-delay:-3s}@keyframes pulse{0%,to{opacity:.025}50%{opacity:.1}}@keyframes travel{0%{offset-distance:0%;opacity:0}12%,88%{opacity:.85}to{offset-distance:100%;opacity:0}}@media (prefers-reduced-motion:reduce){.hero-grid-cells rect{animation:none}.grid-dot{animation:none;display:none}}</style><defs>
+      <pattern id="hero-grid-lines" width="80" height="80" patternUnits="userSpaceOnUse">
+        <path d="M80 0H0V80" fill="none" stroke="#3e348c" stroke-opacity=".19" stroke-width="1"/>
+      </pattern>
+      <radialGradient id="hero-grid-fade">
+        <stop offset="0" stop-color="white"/>
+        <stop offset=".55" stop-color="white" stop-opacity=".85"/>
+        <stop offset="1" stop-color="white" stop-opacity="0"/>
+      </radialGradient>
+      <mask id="hero-grid-mask"><rect width="1440" height="720" fill="url(#hero-grid-fade)"/></mask>
+    </defs>
+    <g mask="url(#hero-grid-mask)">
+      <rect width="1440" height="720" fill="url(#hero-grid-lines)"/>
+      <g class="hero-grid-cells" fill="#3e348c">
+        <rect x="320" y="80" width="80" height="80"/>
+        <rect x="880" y="160" width="80" height="80"/>
+        <rect x="560" y="480" width="80" height="80"/>
+        <rect x="1040" y="400" width="80" height="80"/>
+        <rect x="160" y="320" width="80" height="80"/>
+      </g>
+      <g fill="#3e348c" class="hero-grid-dots">
+        <circle r="2.5" class="grid-dot grid-dot-a"/>
+        <circle r="2.2" class="grid-dot grid-dot-b"/>
+        <circle r="2.5" class="grid-dot grid-dot-c"/>
+        <circle r="2.2" class="grid-dot grid-dot-d"/>
+      </g>
+    </g>
+  </svg>
