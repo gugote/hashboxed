@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 850">
+<defs><pattern id="small" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#ffffff" stroke-opacity=".055" stroke-width=".6"/></pattern><pattern id="major" width="100" height="100" patternUnits="userSpaceOnUse"><rect width="100" height="100" fill="url(#small)"/><path d="M100 0H0V100" fill="none" stroke="#ffffff" stroke-opacity=".10" stroke-width=".8"/></pattern><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L6 3.5 0 7" fill="none" stroke="#ffffff"/></marker></defs>
+<rect width="600" height="850" fill="url(#major)"/>
+<g stroke="#ffffff" stroke-width="1" fill="none" opacity=".28">
+<!-- Logo construction study -->
+<rect x="45" y="403" width="237" height="111" stroke-dasharray="4 5" opacity=".55"/>
+<path d="M30 459H299 M163 390V528" stroke-dasharray="3 5" opacity=".45"/>
+<circle cx="233" cy="457" r="44" opacity=".45"/><path d="M202 426L264 488 M264 426L202 488" stroke-width="9" opacity=".65"/>
+<path d="M45 395V381H282V395 M45 523V537H282V523" opacity=".55"/>
+<!-- Server racks -->
+<g transform="translate(392 126)"><path d="M0 13L25 0H104L80 13Z M80 13H0V109H80Z M80 13L104 0V96L80 109"/><path d="M0 43H80 M0 74H80 M8 24H54 M8 55H54 M8 86H54"/><circle cx="68" cy="28" r="2"/><circle cx="68" cy="59" r="2"/><circle cx="68" cy="90" r="2"/></g>
+<!-- Orthogonal network paths -->
+<path d="M282 458H344V179H390" marker-end="url(#arrow)"/>
+<path d="M433 237V552H303V594" marker-end="url(#arrow)"/>
+<path d="M303 552H130V594" marker-end="url(#arrow)"/>
+<path d="M303 552H474V594" marker-end="url(#arrow)"/>
+<circle cx="303" cy="552" r="4" fill="#124638"/>
+<!-- Online sales -->
+<rect x="68" y="600" width="125" height="81" rx="3"/><path d="M68 617H193 M78 608H81 M87 608H90 M96 608H99 M99 638H111L116 657H151L157 642H113"/><circle cx="122" cy="665" r="3"/><circle cx="147" cy="665" r="3"/>
+<!-- ERP connected modules -->
+<rect x="258" y="600" width="91" height="81" rx="3"/><path d="M276 620H330V633H276Z M276 642H296V662H276Z M310 642H330V662H310Z"/>
+<!-- Supplier invoice -->
+<path d="M447 598H488L503 613V679H447Z M488 598V613H503 M458 629H491 M458 640H491 M458 651H478 M458 665H491"/>
+<path d="M68 640H34V355Q34 335 54 335H82" stroke-dasharray="4 6" marker-end="url(#arrow)" opacity=".6"/>
+<!-- Drawing arrows and annotations -->
+<path d="M95 729Q92 698 122 688 M506 738Q531 709 501 685" marker-end="url(#arrow)"/>
+<path d="M357 114Q397 94 429 113" marker-end="url(#arrow)"/>
+<path d="M55 772Q163 765 265 774" stroke-dasharray="3 5"/>
+</g>
+<g fill="#ffffff" opacity=".38" font-family="monospace" font-size="10" letter-spacing="1.2"><text x="49" y="555">01 / IDENTIDAD</text><text x="392" y="262">02 / CONEXIÓN</text><text x="83" y="700">E-COMMERCE</text><text x="287" y="700">ERP</text><text x="449" y="700">INVOICES</text></g>
+</svg>
