@@ -1,0 +1,150 @@
+.round-nav {
+  display: flex;
+  gap: 8px;
+  padding: 14px 5vw;
+  background: #f6f5f2;
+  border-bottom: 1px solid #dbdad6;
+}
+
+.round-nav a {
+  padding: 7px 13px;
+  border-radius: 20px;
+  color: #202320;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.round-nav a[aria-current="page"] {
+  background: #202320;
+  color: #fff;
+}
+
+.round-nav a:focus-visible {
+  outline: 3px solid #617aee;
+  outline-offset: 3px;
+}
+
+.palette-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 15px;
+}
+
+.spread[data-palette] {
+  --brand-violet: #3d338c;
+  --brand-red: #ee2d2a;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.spread[data-palette="violeta"] {
+  --cover-ground: var(--brand-violet);
+  --highlight: #c4c1ff;
+}
+
+.spread[data-palette="ciruela"] {
+  --cover-ground: #301a3c;
+  --highlight: #ffcc83;
+}
+
+.spread[data-palette="azul"] {
+  --cover-ground: #171b39;
+  --highlight: #92e4d7;
+}
+
+.spread[data-palette] .cover.tech {
+  background: var(--cover-ground);
+  color: #fff;
+}
+
+.spread[data-palette] .cover.tech .wordmark em,
+.spread[data-palette] .cover.tech .handnote {
+  color: var(--highlight);
+}
+
+.spread[data-palette] .cover.tech .blueprint-logo {
+  -webkit-text-stroke-color: var(--highlight);
+}
+
+.spread[data-palette] .cover.tech::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 0.9cqw;
+  background: linear-gradient(90deg, var(--brand-violet), var(--brand-red));
+}
+
+.spread[data-palette] .interior.tech {
+  --paper: color-mix(in srgb, var(--highlight) 12%, white);
+  --ink: var(--cover-ground);
+  --accent: var(--brand-violet);
+  --surface: color-mix(in srgb, var(--highlight) 40%, white);
+}
+
+.spread[data-palette] .interior .wordmark em {
+  color: var(--accent);
+}
+
+.spread[data-palette] .diagram .link,
+.spread[data-palette] .diagram .link::after {
+  color: var(--brand-red);
+  border-color: currentColor;
+}
+
+.spread[data-palette] .diagram .link {
+  background: currentColor;
+}
+
+.ecosystem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2cqw;
+  margin: 4cqw 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ecosystem li {
+  padding: 2.6cqw 1.5cqw;
+  border: 1px solid var(--gridline);
+  border-radius: 1.4cqw;
+  text-align: center;
+  font-size: 2.7cqw;
+}
+
+.ecosystem .product-core {
+  grid-column: 1 / -1;
+  background: var(--surface);
+  font: 700 4.2cqw/1.2 Baloo, sans-serif;
+}
+
+.ecosystem .product-commerce {
+  border-bottom-color: var(--brand-violet);
+}
+
+.ecosystem .product-invoices {
+  border-bottom-color: var(--brand-red);
+}
+
+@media (max-width: 1050px) {
+  .spread[data-palette] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .spread[data-palette] {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .round-nav {
+    display: none;
+  }
+
+  .spread[data-palette] .sheet {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

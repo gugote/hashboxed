@@ -61,8 +61,20 @@
 .cover.tech .note-one{left:57%;top:10.5%}
 .cover.tech .note-two{left:8%;top:86%}
 .cover.tech .note-three{right:7%;top:88%;transform:rotate(4deg)}
-</style></head><body>
-<header><small>Flow X / Revisión interna de propuestas / Octubre 2026</small><h1>Un producto. Tres propuestas visuales.</h1><p>Compará la misma carátula y página de facturas en cada propuesta. Son exploraciones de identidad previas a la presentación al cliente y al diseño completo del dossier.</p><nav aria-label="Propuesta visual"></nav></header>
+</style>
+<link rel="stylesheet" href="round-two.css">
+</head><body>
+<div class="round-nav" role="navigation" aria-label="Rondas de diseño">
+  <a href="/flowint-demo/flow-x#ronda-1">Ronda 1</a>
+  <a href="/flowint-demo/flow-x#ronda-2">Ronda 2</a>
+</div>
+<header id="round-one"><small>Flow X / Revisión interna de propuestas / Octubre 2026</small><h1>Un producto. Tres propuestas visuales.</h1><p>Compará la misma carátula y página de facturas en cada propuesta. Son exploraciones de identidad previas a la presentación al cliente y al diseño completo del dossier.</p><nav aria-label="Propuesta visual"></nav></header>
+<header id="round-two" hidden>
+  <small>Flow X / Ronda 2</small>
+  <h1>Tecnología premium: tres paletas</h1>
+  <p>Compará la misma carátula y dos páginas interiores con tres paletas que parten del violeta y el rojo de Flowint.</p>
+  <div class="palette-options" role="group" aria-label="Paleta de color"></div>
+</header>
 <section class="summary" aria-live="polite"><div><h2 id="direction-title"></h2><p id="rationale"></p></div><div class="specs"><div class="swatches" aria-label="Paleta de la propuesta"></div><div class="fontnote" id="fontnote"></div></div></section>
 <main class="spread" id="spread"></main>
 <script src="content.js"></script>
@@ -70,6 +82,14 @@
 const directions=[{id:'evolution',name:'Evolución Flowint',colors:['#090909','#8260e5','#ee514b','#ffe495'],fonts:'Baloo 2 + Outfit',idea:'Un espectro de color sobre negro. Las capas curvas recorren el violeta y el rojo de Flowint, sumando magenta y tonos cálidos. La tipografía mantiene la conexión con la marca y la carátula gana profundidad y movimiento.'},{id:'expressive',name:'Modeno',colors:['#f75d40','#29152f','#ffe570','#fff9ec'],fonts:'Baloo 2 + Outfit',idea:'Una identidad de producto con carácter, color vibrante y tipografía directa. Una trama muy sutil de circuitos en crema aporta textura a la carátula y da paso a un interior más claro y fácil de leer.'},{id:'tech',name:'Tecnología premium',colors:['#124638','#bcf26e','#f6f8fa','#076556'],fonts:'Baloo 2 + Outfit',idea:'Un plano técnico verde del ecosistema Flow X. La retícula, el estudio del logo y las conexiones entre servidores, ERP, E-commerce e Invoices se combinan con anotaciones manuscritas sobre la gestión integrada.'}];
 const escapeHTML=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const p=n=>escapeHTML(source[n]);
-function choose(i){const d=directions[i];document.querySelectorAll('nav button').forEach((b,k)=>b.setAttribute('aria-pressed',String(i===k)));document.getElementById('direction-title').textContent=d.name;document.getElementById('rationale').textContent=d.idea;document.getElementById('fontnote').textContent=d.fonts;document.querySelector('.swatches').innerHTML=d.colors.map(c=>`<span class="swatch" style="background:${c}" title="${c}" aria-label="${c}"></span>`).join('');document.getElementById('spread').innerHTML=`<div class="sheet-wrap"><div class="caption">Carátula · 01</div><article lang="es" class="sheet cover ${d.id}"><div class="mast"><div class="wordmark">Flow <em>X</em></div><span class="parent">Flowint</span></div><h2>${escapeHTML(source[0].slice(7))}</h2><div class="motif" aria-hidden="true">${d.id==='tech'?'<span class="blueprint-logo">Flow X</span><span class="handnote note-one">Todo integrado</span><span class="handnote note-two">Vendé online</span><span class="handnote note-three">Menos carga manual</span>':''}</div><div class="footer"><span>${p(44)}</span><span>${p(45)}</span></div></article></div><div class="sheet-wrap"><div class="caption">Facturas de proveedores · 05</div><article lang="es" class="sheet interior ${d.id}"><div class="mast"><div class="wordmark">Flow <em>X</em></div><span class="parent">Flowint</span></div><div class="gridrow title-row"><div class="section-label"><span>05</span><span> / </span><span>Flowint Invoices</span></div><h2>${p(16)}</h2></div><div class="gridrow intro-row"><p class="lead">${p(17)}</p><p>${p(18)}</p></div><div class="gridrow diagram-row"><div class="diagram" aria-label="Digitaliza los comprobantes, interpreta sus datos y los incorpora a los procesos administrativos, financieros y contables."><div class="node">Comprobantes</div><span class="link" aria-hidden="true"></span><div class="node">Datos</div><span class="link" aria-hidden="true"></span><div class="node">Procesos</div></div></div><div class="gridrow detail-row"><p>${p(19)}</p></div><div class="gridrow callout-row"><div class="callout">${p(20)}</div><p class="closing">${p(21)}</p></div><div class="footer"><span>${p(45)}</span><span>05</span></div></article></div>`;}
+function choose(i) {
+  document.querySelectorAll('nav button').forEach((button, index) => {
+    button.setAttribute('aria-pressed', String(i === index));
+  });
+  renderDirection(directions[i]);
+}
+function renderDirection(d){document.getElementById('direction-title').textContent=d.name;document.getElementById('rationale').textContent=d.idea;document.getElementById('fontnote').textContent=d.fonts;document.querySelector('.swatches').innerHTML=d.colors.map(c=>`<span class="swatch" style="background:${c}" title="${c}" aria-label="${c}"></span>`).join('');document.getElementById('spread').innerHTML=`<div class="sheet-wrap"><div class="caption">Carátula · 01</div><article lang="es" class="sheet cover ${d.id}"><div class="mast"><div class="wordmark">Flow <em>X</em></div><span class="parent">Flowint</span></div><h2>${escapeHTML(source[0].slice(7))}</h2><div class="motif" aria-hidden="true">${d.id==='tech'?'<span class="blueprint-logo">Flow X</span><span class="handnote note-one">Todo integrado</span><span class="handnote note-two">Vendé online</span><span class="handnote note-three">Menos carga manual</span>':''}</div><div class="footer"><span>${p(44)}</span><span>${p(45)}</span></div></article></div><div class="sheet-wrap"><div class="caption">Facturas de proveedores · 05</div><article lang="es" class="sheet interior ${d.id}"><div class="mast"><div class="wordmark">Flow <em>X</em></div><span class="parent">Flowint</span></div><div class="gridrow title-row"><div class="section-label"><span>05</span><span> / </span><span>Flowint Invoices</span></div><h2>${p(16)}</h2></div><div class="gridrow intro-row"><p class="lead">${p(17)}</p><p>${p(18)}</p></div><div class="gridrow diagram-row"><div class="diagram" aria-label="Digitaliza los comprobantes, interpreta sus datos y los incorpora a los procesos administrativos, financieros y contables."><div class="node">Comprobantes</div><span class="link" aria-hidden="true"></span><div class="node">Datos</div><span class="link" aria-hidden="true"></span><div class="node">Procesos</div></div></div><div class="gridrow detail-row"><p>${p(19)}</p></div><div class="gridrow callout-row"><div class="callout">${p(20)}</div><p class="closing">${p(21)}</p></div><div class="footer"><span>${p(45)}</span><span>05</span></div></article></div>`;}
 document.querySelector('nav').innerHTML=directions.map((d,i)=>`<button type="button" aria-pressed="${i===0}" data-direction="${i}">${d.name}</button>`).join('');document.querySelector('nav').addEventListener('click',e=>{const b=e.target.closest('button');if(b)choose(Number(b.dataset.direction));});choose(0);
-</script></body></html>
+</script>
+<script src="round-two.js"></script>
+</body></html>
